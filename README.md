@@ -1,0 +1,2 @@
+# akash-all-program
+akash
