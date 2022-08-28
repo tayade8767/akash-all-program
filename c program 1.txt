@@ -1,0 +1,124 @@
+//////////////////****to print the student data************////////////////
+
+#include<stdio.h>
+#include<string.h>
+struct student
+{
+    
+    char name[100];
+    int math[3];
+    int che[3];
+    int phy[3];
+};
+
+
+int main()
+{
+ struct student s[3];
+ 
+  for( int i=0;i<3;i++)
+ {
+     printf("enter the name [%d]\n",i);
+     scanf("%s",&s[i].name[i]);
+     
+     printf("enter the math marks of [%d] student\n",i);
+     scanf("%d",&s[i].math[i]);
+     
+     printf("enter the che marks of [%d] student\n",i);
+     scanf("%d",&s[i].che[i]);
+     
+     printf("enter the phy marks of [%d] student\n",i);
+     scanf("%d",&s[i].phy[i]);
+ }
+ 
+ for( int i=0;i<3;i++)
+ {
+    // printf("enter the name [%d]",i);
+     printf("the name of student[%d]:%c\n",i,s[i].name[i]);
+     
+    // printf("enter the math marks of [%d] student",i);
+     printf("the marks of math[%d]:%d\n",i,s[i].math[i]);
+     
+    // printf("enter the che marks of [%d] student",i);
+     printf("the marks of che[%d]:%d\n",i,s[i].che[i]);
+     
+    // printf("enter the phy marks of [%d] student",i);
+     printf("the marks of phy[%d]:%d\n",i,s[i].che[i]);
+     
+ }
+ 
+return 0;
+}
+
+
+
+/////////////*****************update of above program student fail or pass**********************////////////////////////////
+
+
+
+#include<stdio.h>
+#include<string.h>
+struct student
+{
+    
+    char name[100];
+    int math[3];
+    int che[3];
+    int phy[3];
+};
+
+
+int main()
+{
+ struct student s[3];
+ 
+ float total[3],avg[3];
+ 
+  for( int i=0;i<3;i++)
+ {
+     printf("enter the name [%d]\n",i);
+     scanf("%s",&s[i].name[i]);
+     
+     printf("enter the math marks of [%d] student\n",i);
+     scanf("%d",&s[i].math[i]);
+     
+     printf("enter the che marks of [%d] student\n",i);
+     scanf("%d",&s[i].che[i]);
+     
+     printf("enter the phy marks of [%d] student\n",i);
+     scanf("%d",&s[i].phy[i]);
+ }
+ 
+ for( int i=0;i<3;i++)
+ {
+    // printf("enter the name [%d]",i);
+     printf("the name of student[%d]:%c\n",i,s[i].name[i]);
+     
+    // printf("enter the math marks of [%d] student",i);
+     printf("the marks of math[%d]:%d\n",i,s[i].math[i]);
+     
+    // printf("enter the che marks of [%d] student",i);
+     printf("the marks of che[%d]:%d\n",i,s[i].che[i]);
+     
+    // printf("enter the phy marks of [%d] student",i);
+     printf("the marks of phy[%d]:%d\n",i,s[i].phy[i]);
+     
+     total[i]=(s[i].phy[i]+s[i].math[i]+s[i].che[i]);
+     avg[i]=(total[i]*100)/300;
+     printf("%f",total[i]);
+      printf("he got the %f persentile\n",avg[i]);
+      
+      if(avg[i]<35)
+      {
+          printf("the student who are in the posotion %d is fail\n",i);
+      }
+      else
+      {
+           printf("the student who are in the posotion %d is pass\n",i);
+      }
+     
+     
+ }
+ 
+return 0;
+}
