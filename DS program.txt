@@ -1,0 +1,99 @@
+///////////////////////***************program of push using switch*********************//////////////////////
+#include <stdio.h>
+
+int main()
+{
+    int a[5],str=-1,val,ch;
+    printf("enter 1 for push\n");
+    printf("enter 2 for pop\n");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case 1:
+        {
+          while(1)
+            {
+            str++;
+            printf("enter the value you want  insert enter\n");
+            scanf("%d",&val);
+            a[str]=val;
+            if(str==4)
+            {
+                printf("overflow\n");
+                   break;
+            }
+            }
+        }
+        case 2:
+        {
+          if(str==-1)
+          {
+              printf("underflow\n");
+          }
+          break;
+        }
+    }
+    return 0;
+}
+
+///////////////////////***************program of stack to push,pop and then display all the stack*********************//////////////////////
+
+
+#include <stdio.h>
+void main()
+{
+    int a[5],str=-1,val,ch,value,akash;
+    printf("enter 1 for push\n");
+    printf("enter 2 for pop\n");
+    printf("enter 3 for display\n");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case 1:
+        {
+             while(1)
+            {
+                if(str==4)
+            {
+                printf("overflow\n");
+                break;
+            }
+                  str++;
+                  printf("enter the value you want  insert enter\n");
+                  scanf("%d",&val);
+                  a[str]=val;
+            continue;
+            }
+        }   
+        case 2:
+        {
+            while(1)
+            {
+               if(str==-1)
+                  {
+                       printf("underflow\n");
+                          break;
+                  }
+                       value=a[str];
+                       printf("the entre value=%d\n",value);
+                       str--;
+                       continue;
+           }
+        }
+        case 3:
+        {
+             printf("push,pop and the display the stack\n");
+        while(1)
+            {
+                    akash=a[str];
+                   printf(" the enter value=%d\n",akash);
+                   str++;
+               if(str==4)
+                  {
+                       printf("overflow\n");
+                       break;
+                  }
+            }
+        }
+   }
+}
