@@ -1,0 +1,28 @@
+/*average of student of by using private member function*/
+#include<iostream>
+class student
+{
+    private:
+    int phy;
+    int che;
+    int math;
+    float avg;
+    public:
+    void set(int a,int b,int c)
+    {
+        phy=a;
+        che=b;
+        math=c;
+    }
+    int get()
+    {
+        avg=((phy+che+math)*100)/300;
+        return avg;
+    }
+};
+int main()
+{
+    student s;
+    s.set(98,78,88);
+  std::cout<<"the average of all the marks="<<s.get();
+}
