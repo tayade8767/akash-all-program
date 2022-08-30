@@ -1,0 +1,20 @@
+
+#include <iostream>
+using namespace std;
+class akash 
+{
+    public:
+     akash();
+};
+ akash::akash()
+    {
+        int a=34;
+       int f=(1.8*a)+32;
+       cout<<"enter value of akaksh =";
+       cout<<f;
+}
+int main() 
+{
+    akash ak;
+    return 0;
+}
