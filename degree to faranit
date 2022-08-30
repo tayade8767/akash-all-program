@@ -1,0 +1,19 @@
+
+#include <iostream>
+using namespace std;
+class akash 
+{
+    public:
+    int temp;
+};
+
+int main() 
+{
+    akash ak;
+    cout << "enter the value of tempture"<<endl;
+    cin>>ak.temp;
+    int f=(1.8*ak.temp)+32;
+    cout <<f;
+
+    return 0;
+}
