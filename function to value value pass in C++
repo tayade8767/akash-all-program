@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+class akash
+{
+    public:
+    int ak;
+    int pk;
+    int punam(int ak,int pk)
+    {
+        if(ak>pk)
+        {
+            return ak;
+        }
+        else
+        {
+            return pk;
+        }
+    }
+};
+int main() 
+{
+   akash  sus;
+   cout<<"enter  the value of a"<<endl;
+   cin>>sus.pk;
+     cout<<"enter  the value of a"<<endl;
+ cin>>sus.pk;
+   cout<<"greater value="<<sus.punam(sus.pk,sus.pk);;
+}
