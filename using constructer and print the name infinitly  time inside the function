@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+class akash
+{
+    public:
+    akash()
+    {
+      cout<<"akakakakakakakakakakakakak"<<endl;  
+    }
+    
+};
+int main() 
+{
+    for(;;)
+    {
+   akash  sus;
+    }
+}
