@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+enum akash{ronaldo,messi,punam,tejas};
+int main() 
+{
+   akash ak;
+   for(int i;i<=3;i++)
+   {
+   cout<<"number of ronaldo="<<ak<<endl;
+   }
+}
