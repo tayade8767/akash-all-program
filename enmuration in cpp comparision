@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+enum akash{ronaldo=123,messi=234,punam=99,tejas=56};
+int main() 
+{
+   akash ak;
+   if(ronaldo>tejas)
+   {
+       cout<<"ronaldo";
+   }
+   else
+   {
+       cout<<"tejas";
+   }
+}
