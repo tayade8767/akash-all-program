@@ -1,0 +1,73 @@
+#include <stdio.h>
+int top=-1,x,n,value;
+char a[100];
+int push()
+{
+    if(top==99)
+    {
+        printf("stack is overflow\n");
+    }
+    else
+    {
+        top++;
+        printf("enter the element\n");
+        scanf("%s",&value);
+        a[top]=value;   //parameter or formal parameter
+    }
+
+}
+int pop()
+{
+    if(top==-1)
+    {
+        printf("stack is underflow\n");
+    }
+    else
+    {
+        x=a[top];
+        printf("the pop element:%c\n",x);
+        top--;
+    }
+  }
+  void display()
+  {while(1){
+     if(top==-1)
+    {
+        printf("stack is underflow\n");
+        break;
+    }
+    else
+    {
+        x=a[top];
+        printf("the pop element:%c\n",x);
+        top--;}
+    } 
+  }
+  
+void main()
+{
+   while(1)
+   {
+   printf("enter 1 for push\n");
+   printf("enter 2 for pop\n");
+   printf("enter 3 for display\n");
+   scanf("%d",&n);
+   switch(n)
+   {
+       case 1:
+       {
+           push();     //argument 0r actual parameter
+          break;
+       }
+       case 2:
+       {
+          pop();
+           break;
+       }
+       case 3:
+       {
+          display();
+       }
+   }
+}
+}
