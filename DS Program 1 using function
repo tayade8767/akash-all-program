@@ -1,0 +1,75 @@
+#include <stdio.h>
+int top=-1,a[100];
+int push(int m)
+{
+    int value;
+    for(;;)
+    {
+    if(top==m)
+    {
+        printf("stack is overflow\n");
+        break;
+    }
+    else
+    {
+        top++;
+        printf("enter the element\n");
+        scanf("%d",&value);
+        a[top]=value;   //parameter or formal parameter
+        break;
+    }
+    }
+    return top;
+}
+int pop(int top)
+{
+  int  x,v;
+  for(;;)
+  {
+    if(top==-1)
+    {
+        printf("stack is underflow\n");
+        break;
+    }
+    else
+    {
+        x=a[top];
+        printf("the pop element:%d\n",x);
+        top--;
+    }
+  
+  }
+}
+void main()
+{
+  int i,k,x,n;
+  
+   printf("enter the size of an stack\n");
+   scanf("%d",&k);
+   while(1)
+   {
+   printf("enter 1 for push\n");
+   printf("enter 2 for pop\n");
+   scanf("%d",&n);
+   switch(n)
+   {
+       case 1:
+       {
+           i=push(k);     //argument 0r actual parameter
+          break;
+       }
+       case 2:
+       {
+           if(top==-1)
+           {
+           printf("stack is underflow\n");
+           }
+           else
+           {
+               pop(i);
+           }
+           break;
+       }
+   }
+}
+}
