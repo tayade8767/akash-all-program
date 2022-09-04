@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+class akash
+{
+    public:
+   int count=0;
+  int  call()
+    {
+       return count++;
+    }
+};
+
+int main() 
+{
+    int k;
+    akash ak;
+    ak.call();
+    ak.call();
+    ak.call();
+    k=ak.call();
+    cout<<"call the function="<<k;
+    return 0;
+}
