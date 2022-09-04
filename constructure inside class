@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+class student{
+  int brand;
+  public:
+  student()
+  {
+    cout<<"enter the brand";
+    cin>>brand;
+  }
+  void display()
+  {
+      cout<<brand;
+  }
+};
+int main()
+{
+    student a;
+    a.display();
+    return 0;
+}
