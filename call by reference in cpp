@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+void akash(int *a,int *b);
+int main() 
+{
+  int   x=12,y=34;
+    akash(&x,&y);
+   return 0;
+}
+void akash(int *x,int *y)
+{
+    int z;
+    z=*x;
+    *x=*y;
+    *y=z;
+    cout<<"x="<<*x<<endl<<"y="<<*y;
+}
