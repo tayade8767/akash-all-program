@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+int *top,*x,n,value,*m;
+int a[100];
+int *top=a,*m=a;
+void push()
+{
+    if(*top==(*m+100))
+    {
+        printf("stack is overflow\n");
+    }
+    else
+    {
+
+        printf("enter the element\n");
+        scanf("%d",&value);
+        *top=value; 
+         *top++;                  //parameter or formal parameter
+    }
+
+}
+void pop()
+{
+    if(*top==*m)
+    {
+        printf("stack is underflow\n");
+    }
+    else
+    {
+      *top--;
+        printf("the pop element:%d\n",*top);
+             
+    }
+  }
+  void display()
+  {while(1){
+     if(*top==*m)
+    {
+        printf("stack is underflow\n");
+        break;
+    }
+    else
+    {
+        *top--;
+        x=*top;
+        printf("the pop element:%d\n",x);
+        }
+    } 
+  }
+  
+int main()
+{
+   while(1)
+   {
+   printf("enter 1 for push\n");
+   printf("enter 2 for pop\n");
+   printf("enter 3 for display\n");
+   scanf("%d",&n);
+   switch(n)
+   {
+       case 1:
+       {
+           push();     //argument 0r actual parameter
+          break;
+       }
+     case 2:
+       {
+          pop();
+           break;
+       }
+       case 3:
+       {
+          display();
+       }
+   }
+}
+return 0;
+}
