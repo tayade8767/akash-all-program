@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+class line
+{
+    private:
+    double length;
+  public:
+  line(double len);
+void set(double len);
+double count=0;
+  double get(void);
+};
+line::line(double len)
+{
+    cout<<"length="<<len;
+    length=len;
+}
+void line::set(double len)
+{
+    length=len;
+}
+double line::get(void)
+{
+    count++;
+    return length;
+    return count;
+}
+int main() 
+{
+   line line(10);
+   cout<<"length in get="<<line.get()<<endl;
+   line.set(1.9);
+   cout<<"length in get="<<line.get()<<endl;
+   cout<<line.get();
+    return 0;
+}
