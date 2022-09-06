@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class akash
+{
+     static int count;
+    public:
+int set();
+void get();
+};
+int akash::count=0;
+int akash::set()
+{
+  return  count++;
+}
+void akash::get()
+{
+cout<<count;
+}
+int main()
+{
+  akash a;
+  a.set();
+  a.set();
+  a.set();
+  a.get();
+    return 0;
+}
