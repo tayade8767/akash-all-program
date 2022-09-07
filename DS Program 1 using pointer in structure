@@ -1,0 +1,73 @@
+#include <stdio.h>
+struct akash
+{
+  int value,n,a[100];  
+};
+int main() 
+{
+ struct akash ak;
+ int *top,*stk;
+ top=ak.a;
+ stk=ak.a;
+ while(1)
+ {
+     printf("enter 1 for push\n");
+     printf("enter 2 for pop\n");
+     printf("enter 3 for display\n");
+     scanf("%d",&ak.n);
+     switch(ak.n)
+     {
+         case 1:
+         {
+             if(top==(stk+100))
+             {
+                 printf("stack is overflow\n");
+                 break;
+             }
+             else
+             {
+                 *top++;
+                 printf("enter the value\n");
+                 scanf("%d",&ak.value);
+                 *top=ak.value;
+                 break;
+            }
+         }
+         case 2:
+         {
+             if(*top==*stk)
+             {
+                 printf("stack is underflow\n");
+                 break;
+             }
+             else
+             { 
+                  
+                 ak.value=*top;
+               printf("enter value of user::%d\n",ak.value);
+              *top--;
+                 break;
+            }
+         }
+         case 3:
+         {
+             while(1)
+             {
+             if(*top==*stk)
+             {
+                 printf("stack is underflow\n");
+                 break;
+             }
+             else
+             { 
+                  
+                 ak.value=*top;
+               printf("enter value of user::%d\n",ak.value);
+              *top--;
+            }
+            }
+         }
+     }
+ }
+return(0);
+}
