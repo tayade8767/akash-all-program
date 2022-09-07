@@ -1,0 +1,99 @@
+#include <stdio.h>
+struct akash
+{
+  int value,n,a[100],count;  
+};
+int main() 
+{
+ struct akash ak;
+ int *top,*stk;
+ top=ak.a;
+ stk=ak.a;
+ ak.count=0;
+ while(1)
+ {
+     printf("enter 1 for push\n");
+     printf("enter 2 for pop\n");
+     printf("enter 3 for display\n");
+     printf("enter 4 for top most element\n");
+     printf("enter 5 for size of stack\n");
+     scanf("%d",&ak.n);
+     switch(ak.n)
+     {
+         case 1:
+         {
+             if(top==(stk+100))
+             {
+                 printf("stack is overflow\n");
+                 break;
+             }
+             else
+             {
+                 *top++;
+                 ak.count++;
+                 printf("enter the value\n");
+                 scanf("%d",&ak.value);
+                 *top=ak.value;
+                 break;
+            }
+         }
+         case 2:
+         {
+             if(*top==*stk)
+             {
+                 printf("stack is underflow\n");
+                 break;
+             }
+             else
+             { 
+                  
+                 ak.value=*top;
+               printf("enter value of user::%d\n",ak.value);
+              *top--;
+                 break;
+            }
+         }
+         case 3:
+         {
+             while(1)
+             {
+             if(*top==*stk)
+             {
+                 printf("%d",*top);
+                 printf("stack is underflow\n");
+                 break;
+             }
+             else
+             { 
+                  
+                 ak.value=*top;
+               printf("enter value of user::%d\n",ak.value);
+              *top--;
+            }
+            }
+         }
+          case 4:
+         {
+             if(*top==*stk)
+             {
+                 printf("%d",*top);
+                 printf("\nstack is underflow\n");
+                 break;
+             }
+             else
+             { 
+                  
+                 ak.value=*top;
+               printf("the entered topmost element::%d\n",ak.value);
+               break;
+            }
+         }
+         case 5:
+         {
+                 printf("\n%d\n",ak.count);
+                 break;
+         }
+     }
+ }
+return(0);
+}
