@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int akash( int a[])
+{
+    cout<<"ensred array"<<endl;
+    for(int i=0;i<6;i++)
+    {
+        cout<<a[i];
+    }
+}
+int main() 
+{
+int    a[]={23,45,33,11,66,55,77};
+int    b[]={233,435,343,115,626,155,177};
+akash(a);
+akash(b);
+    return 0;
+}
