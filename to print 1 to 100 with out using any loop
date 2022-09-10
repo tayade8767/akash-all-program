@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int min(int a)
+{   
+    
+}
+
+int main() 
+{
+ int a=0;
+ akash:
+ cout<<"factorial="<<a++<<endl;
+ if(a==100)
+ {
+     cout<<10;
+ }
+ else
+ {
+     goto akash;
+ }
+    return 0;
+}
+
+
