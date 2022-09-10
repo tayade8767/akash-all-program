@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+void min(int,int);
+int main() 
+{
+ int a=19,b=39;
+min(a,b);
+cout<<"a="<<a<<" b="<<b<<endl;
+    return 0;
+}
+
+void min(int a,int b)
+{   
+int temp;
+temp=b;
+b=a;
+a=temp;
+cout<<"values in user defined function"<<endl;
+cout<<"a="<<a<<" b="<<b<<endl;
+}
