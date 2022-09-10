@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int min(int a)
+{   
+    if(a==0)
+    {
+        return 1;
+    }
+    else
+    {
+        return a*min(a-1);
+    }
+}
+
+int main() 
+{
+ int a=5;
+ cout<<"factorial="<<min(a);
+    return 0;
+}
+
+
