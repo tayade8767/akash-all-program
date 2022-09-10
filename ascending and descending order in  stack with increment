@@ -1,0 +1,133 @@
+#include<stdio.h>
+int a[100],top=-1,value,n,max,min,count=0;
+
+int push()
+{
+    if(top==100)
+    {
+        printf("stack is overflow\n");
+    }
+    else
+    {
+        top++;
+        printf("enter value you want push::\n");
+        scanf("%d",&value);
+        a[top]=value;
+        count++;
+    }
+}
+
+int pop()
+{
+    if(top==-1)
+    {
+        printf("stack is underflow\n");
+    }
+    else
+    {
+        value=a[top];
+        printf("enterd pop element::%d\n",value);
+       top--;
+       count--;
+    }        
+}
+
+int display()
+{
+    while(1)
+    {
+    if(top==-1)
+    {
+        printf("stack is underflow\n");
+        break;
+    }
+    else
+    {
+        value=a[top];
+        printf("enterd pop element::%d\n",value);
+       top--;
+    }   
+    }
+}
+
+int maxmin()
+{
+    a[0]=max=min;
+    for(int i=0;i<=top;i++)
+    {
+  if(max<a[i]) 
+    {
+       max=a[i]; 
+    }  
+    else
+    {
+        min=a[i];
+    }
+    }
+     printf("enterd max term=%d and min term=%d\n",max,min);
+}
+
+void order()
+{
+    int temp;
+    for(int i=0;i<=top;i++)
+    {
+        for(int j=i+1;j<=top;j++) 
+          {
+             if(a[i]>a[j]) 
+               {
+                  temp=a[i];
+                  a[i]=a[j];
+                  a[j]=temp;
+               }
+          }
+        
+    }
+       printf("assinding order of stack\n");
+        for(int i=0;i<=top;i++)
+        {
+            printf("%d\t",a[i]);
+        }
+        printf("\n");
+}
+
+int main()
+{
+    while(1)
+    {
+        printf("enter 1 for push\n");
+        printf("enter 2 for pop\n");
+        printf("enter 3 for display\n");
+        printf("enter 4 for max and min\n");
+        printf("enter 5 for order\n");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {
+                push();
+                break;
+            }
+            case 2:
+            {
+                pop();
+                break;
+            }
+            case 3:
+            {
+                display();
+                break;
+            }
+            case 4:
+            {
+                maxmin();
+                break;
+            }
+            case 5:
+            {
+                order();
+                break;
+            }
+        }
+    }
+}
