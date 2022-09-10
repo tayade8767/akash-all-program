@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int age;
+    ineligibal:
+    cout<<"you are not not for vote"<<endl;
+    eligibal:
+    cout<<"you are for vote"<<endl;
+    cout<<"enter the age"<<endl;
+    cin>>age;
+    if(age<18)
+    {
+        goto ineligibal;
+    }
+    else
+    {
+      goto  eligibal;
+    }
+    return 0;
+}
