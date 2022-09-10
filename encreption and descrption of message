@@ -1,0 +1,25 @@
+#include <stdio.h>
+void main() 
+{
+   char a[20],shift[20];
+   printf("enter the message\n");
+   gets(a);
+   for(int i=0;i<12;i++)
+   {
+       shift[i]=a[i]+3;
+   }
+    printf("the message to encrepted\n");
+    for(int i=0;i<12;i++)
+   {
+   printf("%c",shift[i]);
+   }
+   printf("\nmessage to descrepted\n");
+   for(int i=0;i<12;i++)
+   {
+       a[i]=shift[i]-3;
+   }
+    for(int i=0;i<12;i++)
+   {
+   printf("%c",a[i]);
+   }
+}
