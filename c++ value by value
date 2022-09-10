@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+void min(int);
+int main() 
+{
+ int a=19;
+min(a);
+cout<<"a="<<a<<endl;
+    return 0;
+}
+
+void min(int a)
+{   
+a=1000;
+cout<<"values in user defined function"<<endl;
+cout<<"a="<<a<<endl;
+}
