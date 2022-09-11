@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+   char *ptr[4]={"akaksj","eueue","ijn","pou"};
+   for(int i=0;i<4;i++)
+   {
+      cout<<ptr[i]<<endl;;
+   }
+    return 0;
+}
