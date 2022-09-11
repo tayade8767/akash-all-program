@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+   int a=100,b=200,*c,*d;
+   cout<<"before"<<endl;
+    cout<<"c="<<a<<endl;
+  cout<<"d="<<b<<endl;
+   c=&a,d=&b;
+   *c=*c+*d;
+   *d=*c-*d;
+   *c=*c-*d;
+      cout<<"after"<<endl;
+   cout<<"c="<<*c<<endl;
+  cout<<"d="<<*d<<endl;
+    return 0;
+}
