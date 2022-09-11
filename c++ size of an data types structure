@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+class akash
+{
+    double k;
+};
+int main() 
+{
+   akash b;
+ cout<<"size of structure="<<sizeof(b)<<endl;
+    return 0;
+}
