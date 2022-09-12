@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int a=20;
+    int &b=a;
+    int &c=a;
+    cout<<"value="<<a<<endl;
+        cout<<"value="<<b<<endl;
+    cout<<"value="<<c<<endl;
+
+    return 0;
+}
