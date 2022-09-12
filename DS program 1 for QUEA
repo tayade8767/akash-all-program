@@ -1,0 +1,56 @@
+#include<stdio.h>
+#define max 100
+int n,a[max],value,rear=-1,front=-1;
+
+void enque()
+{
+   if(rear==2)
+   {
+       printf("quea is full\n");
+   }
+   else
+   {
+       rear++;
+       printf("enter the value you want to ensert::");
+       scanf("%d",&value);
+       a[rear]=value;
+   }
+}
+
+void deque()
+{
+   if(rear==front)
+   {
+       printf("quea is empty\n");
+   }
+   else
+   {
+       front++;
+       value=a[front];
+       printf("your enterd value:::%d",value);
+   }
+}
+
+int main()
+{
+    while(1)
+    {
+    printf("enter 1 for enque\n");
+    printf("enter 2 for deque\n");
+    scanf("%d",&n);
+    switch(n)
+    {
+        case 1:
+        {
+        enque();
+        break;
+        }
+        case 2:
+        {
+            deque();
+            break;
+        }
+        
+    }
+    }
+}
