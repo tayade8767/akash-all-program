@@ -1,0 +1,100 @@
+#include <iostream>
+
+using namespace std;
+
+int num,rear=-1,front=-1,x,a[100],count=-1;
+
+void enque()
+{
+    if(rear==100)
+    {
+        cout<<"Quea is full"<<endl;
+    }
+    {
+        rear++;
+        cout<<"enter value::";
+        cin>>num;
+        a[rear]=num;
+        count++;
+    }
+}
+
+void deque()
+{
+    if(rear==front)
+    {
+        cout<<"Quea is Null"<<endl;
+    }
+    {
+        front++;
+        num=a[front];
+        cout<<"enter value::"<<num<<endl;
+        count--;
+    }
+}
+
+void display()
+{
+    while(1)
+    {
+    if(rear==front)
+    {
+        cout<<"Quea is Null"<<endl;
+        break;
+    }
+    {
+        front++;
+        num=a[front];
+        cout<<"enter value::"<<num<<endl;
+            break;
+    }
+    }
+}
+
+void top()
+{
+    if(rear==100)
+    {
+        cout<<"Quea is full"<<endl;
+    }
+    {
+         num=a[count];
+         cout<<"enter value::"<<num<<endl;
+    }
+}
+
+int main() 
+{
+    while (1)
+    {
+        cout<<"enter 1 for enque"<<endl;
+        cout<<"enter 2 for deque"<<endl;
+        cout<<"enter 3 for display"<<endl;
+        cout<<"enter 4 for top"<<endl;
+        cin>>x;
+        switch(x)
+        {
+            case 1:
+            {
+                enque();
+                break;
+            }
+            case 2:
+            {
+                deque();
+                break;
+            }
+            case 3:
+            {
+                display();
+                break;
+            }
+             case 4:
+            {
+                top();
+                break;
+            }
+        }
+    }
+    return 0;
+}
