@@ -1,0 +1,171 @@
+#include <iostream>
+
+using namespace std;
+
+struct tejas
+{
+   int num;
+   int x;
+   int a[100];
+   int ak;
+   int akash;
+   int temp;
+   int rear=-1;
+   int front=-1;
+   int count=-1;
+
+};
+
+int main() 
+{
+    
+    struct tejas t;
+    int i;
+    int k;
+    int j;
+   
+   
+    while (1)
+    {
+        cout<<"enter 1 for enque"<<endl;
+        cout<<"enter 2 for deque"<<endl;
+        cout<<"enter 3 for display"<<endl;
+        cout<<"enter 4 for top"<<endl;
+        cout<<"enter 5 for min"<<endl;
+        cout<<"enter 6 for max"<<endl;
+        cout<<"enter 7 for assinging"<<endl;
+        cout<<"enter 8 for disending"<<endl;
+        cin>>t.x;
+        switch(t.x)
+        {
+            case 1:
+            {
+               if(t.rear==100)
+    {
+        cout<<"Quea is full"<<endl;
+    }
+    {
+        t.rear++;
+        cout<<"enter value::";
+        cin>>t.num;
+        t.a[t.rear]=t.num;
+        t.count++;
+    }
+                break;
+            }
+            case 2:
+            {
+                if(t.rear==t.front)
+    {
+        cout<<"Quea is Null"<<endl;
+    }
+    {
+        t.front++;
+        t.num=t.a[t.front];
+        cout<<"enter value::"<<t.num<<endl;
+      //  t.count--;
+    }
+                break;
+            }
+            case 3:
+            {
+               while(1)
+    {
+    if(t.rear==t.front)
+    {
+        cout<<"Quea is Null"<<endl;
+        break;
+    }
+    {
+        t.front++;
+        t.num=t.a[t.front];
+        cout<<"enter value::"<<t.num<<endl;
+        
+    }
+    }
+                break;
+            }
+             case 4:
+            {
+               if(t.rear==100)
+    {
+        cout<<"Quea is full"<<endl;
+    }
+    {
+         t.num=t.a[t.count];
+         cout<<"enter value::"<<t.num<<endl;
+    }
+                break;
+            }
+            case 5:
+            {
+                t.ak=t.a[0];
+    for(i=0;i<=t.rear;i++)
+    {
+        if(t.ak<t.a[i])
+         {
+            t.ak=t.a[i];
+         }
+    }
+    cout<<"maximum number="<<t.ak<<endl;
+                break;
+            }
+             case 6:
+            {
+                t.akash=t.a[0];
+    for(i=0;i<=t.rear;i++)
+    {
+        if(t.akash>t.a[i])
+         {
+            t.akash=t.a[i];
+         }
+    }
+    cout<<"minimum number="<<t.akash<<endl;
+                break;
+            }
+             case 7:
+            {
+               for(i=0;i<=t.rear;i++)
+    {
+        for(j=i+1;j<=t.rear;j++)
+        {
+            if(t.a[i]<t.a[j])
+             {
+               t.temp=t.a[i];
+               t.a[i]=t.a[j];
+               t.a[j]=t.temp;
+             }
+        }
+    }
+    cout<<"the assinding order:";
+    for(i=0;i<=t.rear;i++)
+    {
+    cout<<t.a[i]<<"\t";
+    }
+                break;
+            }
+             case 8:
+            {
+               for(i=0;i<=t.rear;i++)
+    {
+        for(j=i+1;j<=t.rear;j++)
+        {
+            if(t.a[i]>t.a[j])
+             {
+               t.temp=t.a[i];
+               t.a[i]=t.a[j];
+               t.a[j]=t.temp;
+             }
+        }
+    }
+    cout<<"the assinding order:";
+    for(i=0;i<=t.rear;i++)
+    {
+    cout<<t.a[i]<<"\t";
+    }
+                break;
+            }
+        }
+    }
+    return 0;
+}
