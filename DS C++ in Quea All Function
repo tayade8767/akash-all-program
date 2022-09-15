@@ -1,0 +1,193 @@
+#include <iostream>
+
+using namespace std;
+
+int num,rear=-1,front=-1,x,a[100],count=-1,ak,akash,i,k,temp,j;
+
+void enque()
+{
+    if(rear==100)
+    {
+        cout<<"Quea is full"<<endl;
+    }
+    {
+        rear++;
+        cout<<"enter value::";
+        cin>>num;
+        a[rear]=num;
+        count++;
+    }
+}
+
+void deque()
+{
+    if(rear==front)
+    {
+        cout<<"Quea is Null"<<endl;
+    }
+    {
+        front++;
+        num=a[front];
+        cout<<"enter value::"<<num<<endl;
+      //  count--;
+    }
+}
+
+void display()
+{
+    while(1)
+    {
+    if(rear==front)
+    {
+        cout<<"Quea is Null"<<endl;
+        break;
+    }
+    {
+        front++;
+        num=a[front];
+        cout<<"enter value::"<<num<<endl;
+        
+    }
+    }
+}
+
+void top()
+{
+    if(rear==100)
+    {
+        cout<<"Quea is full"<<endl;
+    }
+    {
+         num=a[count];
+         cout<<"enter value::"<<num<<endl;
+    }
+}
+
+void arrak()
+{
+    ak=a[0];
+    for(i=0;i<=rear;i++)
+    {
+        if(ak<a[i])
+         {
+            ak=a[i];
+         }
+    }
+    cout<<"maximum number="<<ak<<endl;
+}
+
+void arrakash()
+{
+    akash=a[0];
+    for(i=0;i<=rear;i++)
+    {
+        if(akash>a[i])
+         {
+            akash=a[i];
+         }
+    }
+    cout<<"minimum number="<<akash<<endl;
+}
+
+void ass()
+{
+    for(i=0;i<=rear;i++)
+    {
+        for(j=i+1;j<=rear;j++)
+        {
+            if(a[i]<a[j])
+             {
+               temp=a[i];
+               a[i]=a[j];
+               a[j]=temp;
+             }
+        }
+    }
+    cout<<"the assinding order:";
+    for(i=0;i<=rear;i++)
+    {
+    cout<<a[i]<<"\t";
+    }
+}
+
+void des()
+{
+    for(i=0;i<=rear;i++)
+    {
+        for(j=i+1;j<=rear;j++)
+        {
+            if(a[i]>a[j])
+             {
+               temp=a[i];
+               a[i]=a[j];
+               a[j]=temp;
+             }
+        }
+    }
+    cout<<"the assinding order:";
+    for(i=0;i<=rear;i++)
+    {
+    cout<<a[i]<<"\t";
+    }
+}
+
+
+int main() 
+{
+    while (1)
+    {
+        cout<<"enter 1 for enque"<<endl;
+        cout<<"enter 2 for deque"<<endl;
+        cout<<"enter 3 for display"<<endl;
+        cout<<"enter 4 for top"<<endl;
+        cout<<"enter 5 for min"<<endl;
+        cout<<"enter 6 for max"<<endl;
+        cout<<"enter 7 for assinging"<<endl;
+        cout<<"enter 8 for disending"<<endl;
+        cin>>x;
+        switch(x)
+        {
+            case 1:
+            {
+                enque();
+                break;
+            }
+            case 2:
+            {
+                deque();
+                break;
+            }
+            case 3:
+            {
+                display();
+                break;
+            }
+             case 4:
+            {
+                top();
+                break;
+            }
+            case 5:
+            {
+                arrak();
+                break;
+            }
+             case 6:
+            {
+                arrakash();
+                break;
+            }
+             case 7:
+            {
+                ass();
+                break;
+            }
+             case 8:
+            {
+                des();
+                break;
+            }
+        }
+    }
+    return 0;
+}
