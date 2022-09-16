@@ -1,0 +1,114 @@
+#include<stdio.h>
+#define max 100
+int n,a[max],top=-1,k,s,count=0,i;
+
+void push()
+{
+    if(top==max)
+    {
+        printf("stack is full\n");
+    }
+    else
+    {
+        top++;
+        printf("enter number::");
+        scanf("%d",&k);
+        a[top]=k;
+    }
+}
+
+void pop()
+{
+    if(top==-1)
+    {
+        printf("stack is empty\n");
+    }
+    else
+    {
+        k=a[top];
+        printf("enter number::%d",k);
+        top--;
+    }
+}
+
+void display()
+{
+    while(1)
+    {
+    if(top==-1)
+    {
+        printf("stack is empty\n");
+        break;
+    }
+    else
+    {
+        k=a[top];
+        printf("enter number::%d\n",k);
+        top--;
+    }
+    }
+}
+
+void search()
+{
+    if(top==-1)
+    {
+        printf("stack is empty\n");
+    }
+    else
+    {
+        printf("enter number you want to search::");
+        scanf("%d",&s);
+        for(i=0;i<=top;i++)
+        {
+            if(s==a[i])              //count=0
+            {
+                printf("element is found at the position %d\n",i);
+            }
+            else
+            {
+                count++;
+            }
+        }
+        if(count!=top)
+        {
+            printf("element is not found\n");
+        }
+    }
+}
+
+
+int main()
+{
+    while(1)
+    {
+        printf("enter 1 for push\n");
+        printf("enter 2 for pop\n");
+        printf("enter 3 for display\n");
+        printf("enter 4 for search\n");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {
+                push();
+                break;
+            }
+            case 2:
+            {
+                pop();
+                break;
+            }
+            case 3:
+            {
+                display();
+                break;
+            }
+            case 4:
+            {
+                search();
+                break;
+            }
+        }
+    }
+}
