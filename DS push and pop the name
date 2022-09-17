@@ -1,0 +1,82 @@
+#include<stdio.h>
+#include<string.h>
+#define max 100
+char a[max][max],value[max];
+int top=-1,n;
+          void push()
+            {
+                if(top==max)
+                {
+                    printf("quea is full\n");
+                }
+                else
+                {
+                    top++;
+                    printf("enter the number::");
+                    scanf("%s",value);
+                    strcpy(a[top],value);
+                }
+            }
+
+    void  pop()
+          {
+             if(top==-1)
+                {
+                    printf("quea is null\n");
+                }
+                else
+                {
+                    strcpy(value,a[top]);
+                    printf("enter the number::%s\n",value);
+                    top--;
+                }
+          }
+
+      void display()
+          {
+                while(1)
+                {
+                  if(top==-1)
+                {
+                    printf("quea is null\n");
+                    break;
+                }
+                else
+                {
+                    strcpy(value,a[top]);
+                    printf("enter the number::%s\n",value);
+                    top--;
+                }
+                }
+          }
+
+
+int main()
+{
+    //rear=a,front=a;
+    while(1)
+    {
+        printf("enter 1 for enque\n");
+        printf("enter 2 for deuqe\n");
+        printf("enter 3 for display\n");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {
+                push();
+                break;
+            }
+            case 2:
+            {
+                 pop();
+                 break;
+            }
+             case 3:
+            {
+              display();
+              break;
+            }
+        }
+    }
+}
