@@ -1,0 +1,66 @@
+#include<stdio.h>
+#define max 100
+int *rear=-1,*front=-1,n,a[max],value;
+int main()
+{
+    rear=a,front=a;
+    while(1)
+    {
+        printf("enter 1 for enque\n");
+        printf("enter 2 for deuqe\n");
+        printf("enter 3 for display\n");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {
+                if(*rear==100)
+                {
+                    printf("quea is full\n");
+                    break;
+                }
+                else
+                {
+                    *rear++;
+                    printf("enter the number::");
+                    scanf("%d",&value);
+                    *rear=value;
+                }
+                break;
+            }
+            case 2:
+            {
+                if(*front==*rear)
+                {
+                    printf("quea is null\n");
+                    break;
+                }
+                else
+                {
+                    *front++;
+                    value=*front;
+                    printf("enter the number::%d\n",value);
+                }
+                 break;
+            }
+             case 3:
+            {
+                while(1)
+                {
+                if(*front==*rear)
+                {
+                    printf("quea is null\n");
+                    break;
+                }
+                else
+                {
+                    *front++;
+                    value=*front;
+                    printf("enter the number::%d\n",value);
+                   
+                }
+                }
+            }
+        }
+    }
+}
