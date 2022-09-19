@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+class akash
+{
+  public:
+  akash()
+  {
+      cout<<"we called the default constructor"<<endl;
+  }
+};
+int main() 
+{
+   akash ak;
+   akash pk;
+    return 0;
+}
