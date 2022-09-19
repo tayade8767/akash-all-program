@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+class largest
+{
+    private:
+int a,b;
+public:
+void set();
+friend void akash(largest);
+};
+void largest::set()
+{
+    cout<<"enter the 1st number"<<endl;
+    cin>>a;
+    cout<<"enter the 2nd number"<<endl;
+    cin>>b;
+}
+void akash(largest l)
+{
+          if(l.a>l.b)
+          {
+            cout<<"the largest number is"<<l.a<<endl;
+          }
+          else
+          {
+                cout<<"the largest number is"<<l.b<<endl;               
+          }
+}
+int main() 
+{
+    largest c;
+    c.set();
+    akash(c);
+    return 0;
+}
