@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+class akash
+{
+  public:
+  
+  int i;
+  string name;
+  float salary;
+  akash(int a,string b,float c)
+  {
+      i=a;
+      name=b;
+      salary=c;
+  }
+ void display()
+  {
+      cout<<i<<"  "<<name<<"  "<<salary<<"  "<<endl;
+  }
+};
+int main() 
+{
+   akash ak(123,"akash tayade",321654.987);
+   akash pk(124,"vikee tayade",33698725.326);
+   ak.display();
+   pk.display();
+    return 0;
+}
