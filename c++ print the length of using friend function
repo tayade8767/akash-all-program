@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+class lotas
+{
+        private:
+        int length;
+        public:
+      lotas()
+        {
+            cout<<"enter the value of length";
+            cin>>length;
+        }
+        friend int rose(lotas);
+};
+int rose(lotas q)
+{
+    q.length+=10;
+    return q.length;
+}
+int main()
+{
+        lotas s;
+        
+    cout<<"sum of two mumber="<<rose(s);
+}
