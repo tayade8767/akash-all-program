@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+class A;
+class B
+{
+    int x;
+    public:
+    B()
+    {
+        cout<<"enter the 1 st number"<<endl;
+        cin>>x;
+    }
+    friend void pp(A,B);
+};
+class A
+{
+    int y;
+    public:
+    A()
+    {
+        cout<<"enter the 1 st number"<<endl;
+        cin>>y;
+    }
+    friend void pp(A,B);
+};
+
+void pp(A a,B b)
+{
+    if(a.y>b.x)
+    {
+        cout<<a.y;
+    }
+    else{
+        cout<<b.x;
+    }
+};
+int main()
+{
+    
+    A a;
+    B b;
+   pp(a,b);
+}
