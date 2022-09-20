@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+struct akash
+{
+    int data;
+    struct akash *next;
+};
+void display(struct akash *x)
+{
+    struct akash *p;
+    p=x;
+    while(p!=0)
+    {
+        printf("%d\n",p->data);
+        p=p->next;
+    }
+}
+int main()
+{
+    struct akash *x=(struct akash *)malloc(sizeof(struct akash));
+    struct akash *y=(struct akash *)malloc(sizeof(struct akash));
+    x->data=45;
+    x->next=y;
+    y->data=46;
+    y->next=null;
+    display(x);
+}
