@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+struct akash
+{
+    int data;
+    struct akash *next;
+};
+void display(struct akash *p)
+{
+    while(p!=0)
+    {
+        printf("%d\n",p->data);
+        p=p->next;
+    }
+}
+struct akash *inset(struct akash *x,int val)
+{
+    
+        struct akash *ptr=(struct akash *)malloc(sizeof(struct akash));
+        printf("new head value");
+        scanf ("%d",&val);
+      ptr->data=val;
+      ptr->next=x;
+      return ptr;
+
+}
+int main()
+{
+    int val;
+    struct akash *x=(struct akash *)malloc(sizeof(struct akash));
+    struct akash *y=(struct akash *)malloc(sizeof(struct akash));
+    printf("enter the head of\n");
+    scanf("%d",&x->data);
+    x->next=y;
+    printf("enter the secound of\n");
+    scanf("%d",&y->data);
+    y->next=null;
+    printf("element are inserted\n");
+    display(x);
+        printf(" NEW element are inserted\n");
+   x=inset(x,val);
+   display(x);
+}
