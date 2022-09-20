@@ -1,0 +1,35 @@
+ #include <iostream>
+#include<stdlib.h>
+using namespace std;
+#define null 0
+struct tejas
+{
+    int value;
+    struct tejas *top;
+}*s,*p;
+
+ void display(struct tejas *s)
+{
+    
+    struct  tejas *n;
+    n=s;
+    while(n!=null)
+    {
+    cout<<n->value<<endl;
+    n=n->top;
+    }
+}
+
+int main()
+{
+        struct tejas *s=(struct tejas *)malloc(sizeof(struct tejas));
+        struct tejas *p=(struct tejas *)malloc(sizeof(struct tejas));
+        s->value=12;
+        s->top=p;  // 
+        p->value=18;
+        p->top=null;
+        display(s);
+        
+       // cout<<p->top;
+    return 0;
+}
