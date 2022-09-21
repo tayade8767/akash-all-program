@@ -1,0 +1,28 @@
+#include <iostream>
+#include<stdlib.h>
+using namespace std;
+#define null 0
+struct node
+{ 
+  int data;
+  struct node *next;
+}*p;
+void insert(struct node *p)
+{
+    struct node *a=(struct node *)malloc(sizeof(struct node));
+    cout<<"enter new node value"<<endl;
+    p->next=a;
+    cin>>a->data;
+    a->next=null;
+    cout<<"the value for 1st node=="<<p->data<<endl;
+    cout<<"the value of new node=="<<a->data<<endl;
+    cout<<"the value of new node next=="<<a->next;
+}
+int main()
+{
+    struct node *p=(struct node *)malloc(sizeof(struct node));
+    cout<<"enter the value of 1st node"<<endl;
+    cin>>p->data;
+    insert(p);
+    return 0;
+}
