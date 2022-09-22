@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+int l,m,*n;
+class pk
+{
+  private:
+  int a;
+  int b;
+  int *k;
+  public:
+  pk()
+  {
+      k=new int;
+  }
+  pk(pk &p)
+  {
+      l=p.a;
+      m=p.b;                       //it deep copy of another constructor
+      n=new int;
+      *n=*(p.k);
+  }
+  
+  void setdata(int,int,int);
+  
+  void getdata();
+};
+void pk::setdata(int x,int y,int z)
+{
+    a=x;
+    b=y;
+    *k=z;
+}
+void pk::getdata()
+{
+    cout<<"the value of x="<<l<<endl;
+    cout<<"the value of y="<<m<<endl;
+    cout<<"the value of z="<<*n<<endl;
+}
+int main()
+{
+    pk D1;
+    D1.setdata(10258,987,123);
+    pk D2=D1;           //it create a shallow copy by using default constructor
+    D2.getdata();       //it create  shallow copy of D1 as D2
+}
