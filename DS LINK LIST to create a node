@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+int *neww;
+int i;
+int *head;
+int *newnext;
+#define null 0
+struct node
+{
+    public:
+    int data;
+    struct node *next;
+};
+int main()
+{
+    struct node *head=(struct node *)malloc(sizeof(struct node));
+    struct node *newnext=(struct node *)malloc(sizeof(struct node));
+    cout<<"enter the value::";
+    newnext=head;
+    cin>>head->data;
+    while(i<3)
+    {
+    struct node *neww=(struct node *)malloc(sizeof(struct node));
+    head->next=neww;
+    cout<<"enter the value of new node::";
+    cin>>neww->data;
+    neww->next=null;
+    i++;
+    }
+     
+    while(1)
+    {
+        if(newnext!=null)
+        {
+        cout<<"value=::"<<newnext->data<<endl;
+     newnextnewnext->next;
+        }
+    }
+    return 0;
+}
+        //  if(*newnext==null)
+        // {
+        // break;
+        // }
+        // if(new->next==null)
