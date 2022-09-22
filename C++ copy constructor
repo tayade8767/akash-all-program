@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+class akash
+{
+  public:
+   int y,x;
+  akash( int a)
+  {
+      y=a;
+  }
+  akash(akash &i)
+  {
+      x=i.y;
+  }
+};
+int main() 
+{
+    akash pk(156452600);
+    akash pk1(pk);
+    cout<<"the copy constructor value::"<<pk1.x;
+    return 0;
+}
