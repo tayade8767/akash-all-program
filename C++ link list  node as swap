@@ -1,0 +1,27 @@
+#include<iostream>
+#define null 0
+using namespace std;
+struct node
+{
+  int data;
+  struct node *next;
+};
+void insert(struct node *head)
+{
+    struct node *akash=(struct node *)malloc(sizeof(struct node));
+    cout<<"enter the new ahash value::";
+    cin>>akash->data;
+    swap(akash,head);
+    akash->next=head;
+    cout<<"value->akash"<<akash->data;
+    cout<<"value->head"<<head->data;
+    cout<<"value->"<<head->next;
+}
+int main()
+{
+    struct node *head=(struct node *)malloc(sizeof(struct node));
+    cout<<"enter the hela head value::";  
+    head->next=null;
+    cin>>head->data;
+    insert(head);
+}
