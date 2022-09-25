@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+class akash
+{
+  public:
+  int id;
+  string name;
+  float salary;
+  akash(int x,string y,float z)                         //constructor is called 
+  {
+     this->id= x;
+      this->name=  y;
+       this->salary= z;
+      
+  }
+  void display()     //~it tigle sign use for destructor   //destructor is called 
+  {
+      cout<<"id="<<id<<endl<<"name="<<name<<endl<<"salary="<<salary<<endl;
+  }
+   
+};
+
+int main() 
+{
+    akash a1=akash(2,"akash",200000000.3214);
+    akash a2=akash(123,"tejas",20000000.36987);
+    a1.display();
+    a2.display();
+    return 0;
+}
