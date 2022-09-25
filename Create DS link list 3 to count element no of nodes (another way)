@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+int c=0;
+struct node
+{
+  int data;
+  struct node *next;
+}*head=null;
+
+void create(int a[],int n)
+{
+    struct node *last,*akash;
+    head=(struct node *)malloc(sizeof(struct node));
+    head->data=a[0];
+    head->next=null;
+    last=head;
+    for(int i=1;i<n;i++)
+    {
+         akash=(struct node *)malloc(sizeof(struct node));
+         akash->data=a[i];
+         akash->next=null;
+         last->next=akash;
+         last=akash;
+    }
+}
+
+// void display(struct node *p)
+// {
+//     if(p!=null)
+//     {
+//         printf("%d\t",p->data);
+//         c++;
+//         display(p->next);
+//     }
+// }
+
+int countnode(struct node *p)
+{
+    if(p==0)
+    {
+        return 0;
+    }
+    else
+    {
+        return countnode(p->next)+1;
+    }
+    
+}
+int main() 
+{
+    int a[]={12,23,33,22,11,13,42,55,66,76};
+    create(a,9);
+    
+    //printf("\nthe number of count=%d\n",display(head));
+        printf("\nthe number of count=%d\n",countnode(head));
+
+    return 0;
+}
