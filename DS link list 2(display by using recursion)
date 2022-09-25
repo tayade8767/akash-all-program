@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node
+{
+  int data;
+  struct node *next;
+}*first=null;
+void  create(int a[],int n)
+{
+    struct node *last,*t;
+    first=(struct node *)malloc(sizeof(struct node));
+    printf("enter the value of head::");
+    first->data=a[0];
+    first->next=null;
+    last=first;
+
+    for(int i=0;i<n;i++)
+    {
+    t=(struct node *)malloc(sizeof(struct node)); 
+    t->data=a[i];
+    t->next=null;
+    last->next=t;
+    last=t;
+    }
+}
+void display(struct node *p)
+{
+    if(p!=null)
+    {
+        //if()
+        printf("%d\t",p->data);
+       display(p->next);
+    }
+}
+int main() 
+{
+    int a[]={12,23,34,45,56,76,32};
+    create(a,7);
+    display(first);
+    return 0;
+}
