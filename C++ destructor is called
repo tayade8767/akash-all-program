@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+class akash
+{
+  public:
+  
+  akash()                         //constructor is called 
+  {
+      cout<<"constructor is called"<<endl;
+  }
+  
+  ~akash()     //~it tigle sign use for destructor   //destructor is called 
+  {
+      cout<<"distructor is called"<<endl;
+  }
+};
+
+int main() 
+{
+    akash a1;
+    akash a2;
+    return 0;
+}
