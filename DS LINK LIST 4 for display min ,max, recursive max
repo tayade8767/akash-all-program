@@ -1,0 +1,149 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+int n,m=0;
+
+struct node
+{
+  int data;
+  struct node *next;
+}*head=null;
+
+void insert(int a[],int n)
+{
+    struct node *pointer;
+    head=(struct node *)malloc(sizeof(struct node));
+    head->data=a[0];
+    head->next=null;
+    pointer=head;
+    for(int i=1;i<n;i++)
+    {
+        struct node *t;
+        t=(struct node *)malloc(sizeof(struct node));
+        t->data=a[i];
+        pointer->next=t;
+        pointer=t;
+    }
+}
+
+void display(struct node *p)
+{
+    while(p!=null)
+    {
+        printf("%d\t",p->data);
+        p=p->next;
+    }
+}
+
+void max(struct node *mi)
+{
+    int m=0;
+  while(mi!=null)
+  {
+      if(mi->data>m)
+      {
+         m=mi->data;
+      }
+         mi=mi->next;
+  }
+  printf("\n the maximum element::%d\n",m);
+}
+
+int Rmax(struct node *mi)
+{
+    int m=0;
+    int x;
+      if(mi==0)
+        {
+            null;
+        }
+      else
+        {
+         x=Rmax(mi->next);
+         if(x>mi->data)
+          {
+              return x;
+          }
+          else
+          {
+              return mi->data;
+          }
+        }
+}
+
+void min(struct node *mi)
+{
+    int m=mi->data;
+  while(mi!=null)
+  {
+      if(m>mi->data)
+      {
+         m=mi->data;
+      }
+         mi=mi->next;
+  }
+  printf("\n the minimum element::%d\n",m);
+}
+
+// int Rmin(struct node *mi)
+// {
+//     int x;
+//       if(mi==0)
+//       {
+//          null;
+//       }
+//       else
+//       {
+//           x=Rmin(mi->next);
+//           if(x>mi->data)
+//           {
+//               return mi->data;
+              
+//           }
+//           else
+//           {
+//               return x;
+//           }
+//       }
+         
+//   }
+
+int main() 
+{
+   int a[]={12,2,3,34,1552,56,67,78,97};
+  while(1)
+  {
+    printf("enter 1 for insert\n");
+    printf("enter 2 for dispaly\n");
+    printf("enter 3 for max\n");
+    scanf("%d",&n);
+    switch(n)
+    {
+        case 1:
+        {
+           insert(a,9);
+        }
+        case 2:
+        {
+           display(head);
+        }
+        case 3:
+        {
+          max(head);
+        }
+        case 4:
+        {
+          printf("\n the maximum element in recursion::%d\n",Rmax(head));
+        }
+        case 5:
+        {
+          min(head);
+        }
+        case 6:
+        {
+          printf("\n the maximum element in recursion::%d\n",Rmin(head));
+        }
+  }
+    return 0;
+  }
+}
