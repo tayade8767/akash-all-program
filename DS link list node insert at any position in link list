@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+int n,m=0;
+int pos;
+struct node
+{
+  int data;
+  struct node *next;
+}*head=null;
+
+void insert(int a[],int n,int pos)
+{
+    struct node *pointer,*pre,*temp;
+    head=(struct node *)malloc(sizeof(struct node));
+    head->data=a[0];
+    head->next=null;
+    pointer=head;
+    temp=head;
+    for(int i=1;i<n;i++)
+    {
+        struct node *t;
+        t=(struct node *)malloc(sizeof(struct node));
+        t->data=a[i];                                    //to create a node
+        pointer->next=t;
+        pointer=t;
+    }
+    
+    for(int i=0;i<pos-1;i++)
+    {
+        temp=temp->next;
+    }
+    pre=(struct node *)malloc(sizeof(struct node));
+    printf("entre the value for perticular position::");
+    scanf("%d",&pre->data);
+    pre->next=temp->next;
+    temp->next=pre;                   //insert at any position
+}
+
+void display(struct node *p)
+{
+    while(p!=null)
+    {
+        printf("%d\t",p->data);        //to dispaly nodes value
+        p=p->next;
+    }
+}
+
+
+
+int main() 
+{
+   int a[]={12,2,3,34,1552,56,67,78,97};
+  while(1)
+  {
+    printf("enter 1 for insert\n");
+    printf("enter 2 for dispaly\n");
+    printf("enter 3 for insert at begin\n");
+    scanf("%d",&n);
+    switch(n)
+    {
+        case 1:
+        {
+            printf("insert a position\n");
+            scanf("%d",&pos);
+           insert(a,9,pos);
+        }
+        case 2:
+        {
+           display(head);
+        }
+       
+  }
+    return 0;
+  }
+}
