@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+int n,m=0;
+
+struct node
+{
+  int data;
+  struct node *next;
+}*head=null;
+
+void insert(int a[],int n)
+{
+    struct node *pointer;
+    head=(struct node *)malloc(sizeof(struct node));
+    head->data=a[0];
+    head->next=null;
+    pointer=head;
+    for(int i=1;i<n;i++)
+    {
+        struct node *t;
+        t=(struct node *)malloc(sizeof(struct node));
+        t->data=a[i];
+        pointer->next=t;
+        pointer=t;
+    }
+}
+
+void display(struct node *p)
+{
+    while(p!=null)
+    {
+        printf("%d\t",p->data);
+        p=p->next;
+    }
+}
+
+void prenode(struct node *pre)
+{
+    struct node *begin=(struct node *)malloc(sizeof(struct node));
+    printf("\nenter the value insert at begin::");
+    scanf("%d",&begin->data);
+    begin->next=head;
+    head=begin;
+}
+
+void prevalue(struct node *value)
+{
+    while(value!=0)
+    {
+        printf("%d\t",value->data);
+        value=value->next;
+    }
+}
+
+int main() 
+{
+   int a[]={12,2,3,34,1552,56,67,78,97};
+  while(1)
+  {
+    printf("enter 1 for insert\n");
+    printf("enter 2 for dispaly\n");
+    printf("enter 3 for insert at begin\n");
+    scanf("%d",&n);
+    switch(n)
+    {
+        case 1:
+        {
+           insert(a,9);
+        }
+        case 2:
+        {
+           display(head);
+        }
+        case 3:
+        {
+            prenode(head);
+        }
+        case 4:
+        {
+           prevalue(head);
+        }
+  }
+    return 0;
+  }
+}
