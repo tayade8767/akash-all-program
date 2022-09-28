@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+class akash
+{
+  public:
+  int age;
+  string name;
+  float rs;
+  static int count;                  //it is to use of static 
+  akash(int x,string y,float z)
+  {
+      this->age=x;
+      this->name=y;
+      this->rs=z;
+      count++;
+  }
+  
+  void dispaly()
+  {
+      cout<<age<<"   "<<"name"<<"   "<<rs<<endl;
+      cout<<"the number of count of static="<<count<<endl;
+  }
+  
+};
+int akash::count=0;
+
+int main()
+{
+ akash k=akash(19,"akash tayade",12.90); //when we create a object then of class then static can make copy of static feild is created only once
+ akash k1=akash(20,"tayade akash",90.12);
+ k.dispaly();
+ k1.dispaly();
+ return 0;
+}
