@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+class akash
+{
+  public:
+  int age;
+  string name;
+  float rs;
+  static int po;
+  akash(int x,string y,float z)
+  {
+      this->age=x;
+      this->name=y;
+      this->rs=z;
+  }
+  
+  void dispaly()
+  {
+      cout<<age<<"   "<<"name"<<"   "<<rs<<"   "<<po<<endl;
+  }
+  
+};
+int akash::po=190;
+
+int main()
+{
+ akash k=akash(19,"akash tayade",12.90);
+ akash k1=akash(20,"tayade akash",90.12);
+ k.dispaly();
+ k1.dispaly();
+ return 0;
+}
