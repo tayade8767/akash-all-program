@@ -1,0 +1,73 @@
+#include<stdio.h>
+#include <stdlib.h>
+#define null 0
+
+struct node 
+{
+  int data;
+  struct node *next;
+}*head=null;
+
+int i,a;
+void insert(int a[],int n)
+{
+   struct node *ptr,*akash,*pointer;
+   head=(struct node *)malloc(sizeof(struct node));
+   head->data=a[0];
+   head->next=null;
+   ptr=head;
+   pointer=head;
+   for(i=1;i<n;i++)
+   {
+       akash=(struct node *)malloc(sizeof(struct node));
+       akash->data=a[i];
+       akash->next=null;
+       ptr->next=akash;
+       ptr=akash;
+   }
+//   printf("enter the position to insert the data::");   //it insert at end 1st method
+//   scanf("%d",&n);
+//   for(i=0;i<n-1;i++)
+//   {
+//       pointer=pointer->next;
+//   }
+if(akash->next==null)
+{
+   struct node *node1=(struct node *)malloc(sizeof(struct node));//it insert at end 2nd method
+   printf("enter the value::");
+   scanf("%d",&node1->data);
+   node1->next=null;
+   ptr->next=node1;
+}
+}
+
+
+
+
+
+
+
+
+
+
+void display(struct node *pointer)
+{
+    while(pointer!=0)
+    {
+        printf("%d\t",pointer->data);
+        pointer=pointer->next;
+    }
+}
+int main()
+{
+   int a[]={10,20,30,40,50,60,70,80};
+     while(1)
+     {
+     insert(a,8) ;  
+     display(head);
+    }
+}
+    //   if(node1==null)
+    //   {
+           
+    //   }
