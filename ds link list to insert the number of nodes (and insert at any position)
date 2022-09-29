@@ -1,0 +1,79 @@
+#include<stdio.h>
+#include <stdlib.h>
+#define null 0
+
+struct node 
+{
+  int data;
+  struct node *next;
+}*head=null;
+
+int i,a;
+void insert()
+{
+    int n,a;
+   printf("enter the value of head::");
+   scanf("%d",&a);
+    printf("enter the number 0f  node::");
+   scanf("%d",&n);
+   
+   struct node *ptr,*akash,*pointer;
+   head=(struct node *)malloc(sizeof(struct node));
+   head->data=a;
+   head->next=null;
+   ptr=head;
+   pointer=head;
+   for(i=0;i<n;i++)
+   {
+       akash=(struct node *)malloc(sizeof(struct node));
+       printf("enter the %d node::",i);
+       scanf("%d",&akash->data);
+       akash->next=null;
+       ptr->next=akash;
+       ptr=akash;
+   }
+   
+  printf("enter the position to insert the data::");   
+  scanf("%d",&n);            //it insert at end 1st method
+ 
+        if(n==0)
+        {
+                struct node *node1=(struct node *)malloc(sizeof(struct node));
+                printf("enter the value::");
+                scanf("%d",&node1->data);
+                node1->next=head;
+                head=node1;
+        }
+        else
+        {
+             for(i=0;i<n-1;i++)
+                  {
+                      pointer=pointer->next;
+                  }
+                struct node *node1=(struct node *)malloc(sizeof(struct node));
+                printf("enter the value::");
+                scanf("%d",&node1->data);
+                node1->next=pointer->next;
+                pointer->next=node1;
+     }
+}    
+     
+void display(struct node *point)     
+{
+    while(point!=0)
+    {
+        printf("%d\t",point->data);
+        point=point->next;
+    }
+}
+
+
+
+
+
+int main()
+{
+     insert() ;  
+     display(head);
+     return (0);
+}
