@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class parent
+{
+  public:
+  void car()
+  {
+      cout<<"it is best car"<<endl;
+  }
+};
+
+class ch:  public parent
+{
+  public:
+ void driver()
+ {
+     cout<<"it is driver in cpp";
+ }
+};
+
+int main(void)
+{
+    ch s;
+    s.car();
+    s.driver();
+    return 0;
+}
