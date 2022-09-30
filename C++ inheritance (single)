@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+class A{
+  public:
+  A()
+  {
+      cout<<"hello world";      //parant class OR base class 
+  }
+};
+class B:public A{       //child class OR derived class
+};
+
+int main() {
+   B k;                //To call the constructor
+//  k.fun();
+
+    return 0;
+}
