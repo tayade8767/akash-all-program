@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+class A
+{
+   public:
+  int x;
+  int y;
+ 
+  void  akash(int s,int t)
+  {
+    x=s;
+    y=t;
+  }
+};
+
+class B:public A
+{
+  public:
+  int akas()
+  {
+      int result=x*y;
+    return result;
+  }
+};
+
+class C:public A
+{
+  public:
+  int aka()
+  {
+     int result=x+y;
+    return result;
+  }
+};
+
+int main() 
+{
+    B b;
+    b.akash(1000,2020);
+    int l=b.akas();
+                                              //value pass in main class and collect in child class
+    C c;
+    c.akash(21,40);
+    int m=c.aka();
+
+    cout<<"multipliction="<<l<<endl;
+   cout<<"addition="<<m<<endl;
+    return 0;
+}
