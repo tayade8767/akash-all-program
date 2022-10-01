@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+class A
+{
+  protected:
+  int x;
+  public:
+  void akash(int s)                        //it is a class A
+  {
+    x=s;
+  }
+};
+
+class B:public A
+{
+  protected:
+  int y;
+  public:
+  void akas(int s)                       //it is a class B    which inherites B
+  {
+    y=s;
+  }
+};
+
+class C
+{
+  protected:
+  int z;
+  public:
+  void aka(int s)                           //it is class C
+  {
+    z=s;
+  }
+};
+
+class D:public B,public C                         //it is a class D    which inherites B,C
+{
+    public:
+    void display()
+    {
+        akash(10);
+        akas(2000);
+        aka(30);
+        cout<<"the value of x="<<x<<endl;
+        cout<<"the value of y="<<y<<endl;
+        cout<<"the value of z="<<z<<endl;
+        cout<<"addition of number::"<<x+y+z<<endl;
+    }
+};
+int main() 
+{
+    D k;
+    k.display();
+    return 0;
+}
