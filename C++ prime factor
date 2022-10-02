@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,count,i;
+    cout<<"enter the number"<<endl;
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        count=0;
+        if(n%i==0)
+        {
+            count++;
+        }
+        if(count==1)
+    {
+        cout<<"it prime factor::"<<i<<endl;
+    }
+    }
+}
