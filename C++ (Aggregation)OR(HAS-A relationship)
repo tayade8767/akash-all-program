@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+class Address
+{
+public:
+string addressline,city,state;
+  Address(string addressline,string city,string state)
+  {
+      this->addressline=addressline;
+      this->city=city;
+      this->state=state;
+  }
+};
+
+class Employee
+{
+  public:
+  Address* address;                                                                            //it is HAS-A class 
+  string name,id;
+  int age;
+   Employee(string name,string id,int age,Address* address)
+  {
+      this->name=name;
+      this->id=id;
+      this->age=age;
+      this->address=address;
+  }
+void display()
+{
+    cout<<"Name::"<<name<<"    "<<"Age::"<<age<<"   "<<"ID::"<<id<<endl;
+    cout<<"Addressline::"<<address->addressline<<"    "<<"City::"<<address->city<<"     "<<"State::"<<address->state;
+}
+};
+int main()
+{
+    Address A1=Address("loni road","risod","Maharashtra");
+    Employee E1=Employee("Akash Tayade","2021BIT064",20,&A1);
+    E1.display();
+}
