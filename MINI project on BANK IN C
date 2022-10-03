@@ -1,0 +1,54 @@
+#include <stdio.h>
+struct Account{
+int  accountno,balance;
+char name[10][10];
+};
+int i,n,k,bal,amount;
+void detail(struct Account a[],int n)
+{
+    for(i=0;i<n;i++)
+    {
+        if(a[i].balance<=100)
+        {
+            printf("account no::%d\n",a[i].accountno);
+            printf("Name::%d\n",a[i].name[i][i]);
+            printf("account balance::%d\n",a[i].balance);
+        }
+        else{
+             printf("0 for withdrawal\n");
+               printf("1 for deposit\n");
+               scanf("%d",&k);
+                printf("enter the ammount::");
+               scanf("%d",&amount);
+           switch(k)
+           {
+               case 0:
+               {
+                    bal=a[i].balance-amount;
+               }
+                case 1:
+               {
+                   bal=a[i].balance+amount;
+               }
+           }
+printf("account balance after transition of %d coustemer ::%d",i,bal);
+        }
+    }
+}
+int main()
+{
+   struct Account akash[200];
+   printf("enter the number of coustomer::");
+   scanf("%d",&n);
+   for(i=0;i<n;i++)
+   {
+       printf("enter the name::");
+       scanf("%s",&akash[i].name[i][i]);
+       printf("enter the account number::");
+       scanf("%d",&akash[i].accountno);
+       printf("enter the account balance::");
+       scanf("%d",&akash[i].balance);
+   }
+  detail(akash,n);
+    return 0;
+}
