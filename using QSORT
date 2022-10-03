@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include<stdlib.h>
+struct Account{
+int  Tmatches,age;
+char name[10][10];
+};
+int i,n,k,bal,amount,avgrun[10];
+int cmpfunc (const void *a, const void *b) {
+  const  int *x=(int*)x;
+  const int *y=(int*)y;  
+return x-y;
+}
+int main()
+{
+  struct Account akash[20];
+  printf("enter the number of players::");
+  scanf("%d",&n);
+  for(i=0;i<n;i++){
+      printf("enter the name::");
+      scanf("%s",akash[i].name[i]);
+      printf("enter the test matches::");
+      scanf("%d",&akash[i].Tmatches);
+      printf("enter the age::");
+      scanf("%d",&akash[i].age);
+  }
+printf("enter the avgrun\n");
+   for(i=0;i<n;i++)
+   {
+       scanf("%d",&avgrun[i]);
+   }
+    qsort(avgrun,5, sizeof(int),cmpfunc);
+    for(i=0;i<n;i++)
+   {
+            printf("avgrun::%d\t",avgrun[i]);
+   }
+ for(i=0;i<n;i++){
+            printf("\nName::%s\n",akash[i].name[i]);
+            printf("Tmatches::%d\n",akash[i].Tmatches);
+            printf("age::%d\n",akash[i].age);
+ }
+    return 0;
+}
