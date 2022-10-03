@@ -1,0 +1,22 @@
+/*#include <stdio.h>
+#include<stdlib.h>
+int a,b;
+
+int akash(int a,int b)
+{
+    int c;
+    c=a;
+    a=b;
+    b=c;
+    printf("a=%d\t",a);
+    printf("b=%d\n",b);
+}
+void main()
+{
+    printf("enter the number\n");
+    scanf("%d%d",&a,&b);
+     printf("a=%d\t",a);
+    printf("b=%d\n",b);
+    akash(a,b);
+}*/
+
