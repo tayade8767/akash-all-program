@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node
+{
+  int data;
+  struct node *next;
+};
+int i,n;
+struct node *head=null;
+void insert()
+{
+    struct node *p=head;
+    head=(struct node *)malloc(sizeof(struct node));
+    printf("ente the value::");
+    scanf("%d",&head->data);
+    head->next=p;
+     p=head;
+}
+
+void display()
+{
+    struct node *p=head;
+    while(p!=null)
+    {
+        printf("%d\t",p->data);
+        p=p->next;
+    }
+}
+
+int main() 
+{
+    while(1)
+    {
+        printf("\nenter 1 insert\n");
+        printf("enter 2 for delete\n");
+        printf("enter 3 for display\n");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {
+                insert();
+                break;
+            }
+            case 2:
+            {
+               display();
+    
+            }
+        }
+    }
+    return 0;
+}
