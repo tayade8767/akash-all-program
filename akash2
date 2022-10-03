@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include<stdlib.h>
+struct node
+{
+int a,b;
+};
+
+int akash(struct node d)
+{
+    int c;
+    c=d.a;
+    d.a=d.b;
+    d.b=c;
+    printf("a=%d\t",d.a);
+    printf("b=%d\n",d.b);
+}
+void main()
+{
+    struct node pk;
+    printf("enter the number\n");
+    scanf("%d%d",&pk.a,&pk.b);
+     printf("a=%d\t",pk.a);
+    printf("b=%d\n",pk.b);
+    akash(pk);
+}
+
