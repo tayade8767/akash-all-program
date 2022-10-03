@@ -1,0 +1,47 @@
+#include <stdio.h>
+struct Account{
+int  rollno, year;
+char name[10][10],department[10][10],course[10][10];
+};
+int i,n,k,bal,amount;
+void detail(struct Account a[],int n)
+{
+    for(i=0;i<n;i++){
+        if(a[i].year==2021&&a[i].rollno==64){
+            printf("perticular year and roll no of student\n");
+            printf("Name::%s\n",a[i].name[i]);
+            printf("department::%s\n",a[i].department[i]);
+            printf("course::%s\n",a[i].course[i]);
+            printf("rollno::%d\n",a[i].rollno);
+            printf("year::%d\n",a[i].year);
+        }
+        else{
+             printf("perticular not for year and roll no\n");
+            printf("Name::%s\n",a[i].name[i]);
+            printf("department::%s\n",a[i].department[i]);
+            printf("course::%s\n",a[i].course[i]);
+            printf("rollno::%d\n",a[i].rollno);
+            printf("year::%d\n",a[i].year); 
+        }
+    }
+}
+int main()
+{
+   struct Account akash[450];
+   printf("enter the number of student::");
+   scanf("%d",&n);
+   for(i=0;i<n;i++){
+       printf("enter the name::");
+       scanf("%s",&akash[i].name[i]);
+       printf("enter the roll no::");
+       scanf("%d",&akash[i].rollno);
+       printf("enter the year of joinning::");
+       scanf("%d",&akash[i].year);
+       printf("enter the department::");
+       scanf("%s",&akash[i].department[i]);
+       printf("enter the course::");
+       scanf("%s",&akash[i].course[i]);
+   }
+  detail(akash,n);
+    return 0;
+}
