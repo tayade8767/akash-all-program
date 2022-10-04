@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+class complex
+{
+    private:
+  int real;
+  int img;
+  public:
+  complex(int x=0,int y=0)
+  {
+      real=x;
+      img=y;
+  }
+  void dispaly()
+  {
+    cout<<real<<"+i"<<img;
+  }
+friend complex operator+(complex c1,complex c2);
+};
+complex operator+(complex c1,complex c2)
+{
+    complex temp;
+    temp.real=c1.real+c2.real;
+    temp.img=c1.img+c2.img;
+    return temp;
+}
+int main() 
+{
+    complex c1(1,20),c2(2,30),c3;
+    c3=c2+c1;
+    c3.dispaly();
+    return 0;
+}
