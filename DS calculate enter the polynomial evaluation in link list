@@ -1,0 +1,140 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node
+{
+  int data;
+  int pow;
+  struct node *next;
+}*ptr,*head;
+int i,n,val,pow1,pos,devil,sum=0;
+void insert()
+{
+    ptr=(struct node *)malloc(sizeof(struct node));
+    printf("enter the constant value::");
+    scanf("%d",&ptr->data);
+    printf("enter the power value::");
+    scanf("%d",&ptr->pow);
+    ptr->next=head;
+    head=ptr;
+}
+
+void del()
+{
+    printf("position for delete::");
+    scanf("%d",&pos);
+    if(pos==1)
+    {
+            struct node *k=ptr;
+            ptr=ptr->next;
+            val=k->data;
+            pow1=k->pow;
+            printf("delete node value=%d",val);
+            printf("delete node power value=%d",pow1);
+            free(k);
+    }
+    else
+    {
+        struct node *p=ptr,*q=ptr;
+        for(i=0;i<pos-1;i++)
+        {
+            q=p;
+            p=q->next;
+        }
+            
+            val=p->data;
+             pow1=p->pow;
+            q->next=p->next;
+            printf("delete node value=%d",val);
+            printf("delete node power value=%d",pow1);
+            free(p);
+    }
+}
+void Ipos()
+{
+    struct node *newnode,*temp,*p=ptr;
+    printf("enter the position::");
+    scanf("%d",&pos);
+    if(pos==0)
+    {
+            newnode=(struct node *)malloc(sizeof(struct node ));
+            printf("enter the value::");
+            scanf("%d",&newnode->data);
+            printf("enter the value::");
+            scanf("%d",&newnode->pow);
+            newnode->next=ptr;
+            ptr=newnode;
+    }
+    else
+    {
+            temp=(struct node *)malloc(sizeof(struct node ));
+            printf("enter the value::");
+            scanf("%d",&temp->data);
+            printf("enter the value::");
+            scanf("%d",&temp->pow);
+            for(i=0;i<pos-1;i++)
+            {
+                p=p->next;
+            }
+            temp->next=p->next;
+            p->next=temp;
+    }
+}
+void display()
+{
+    struct node *p=ptr,*q=null,*r=null,*x;
+    while(p!=null)
+    {
+        r=q;
+        q=p;
+        p=p->next;
+        q->next=r;
+    }
+    ptr=q;
+    x=ptr;
+    printf("enter the value you want to evaluate::");
+    scanf("%d",&devil);
+                        while(x!=null)
+                    {
+                        printf("%d*%d^%d+",x->data,devil,x->pow);
+                        sum+=x->data*devil^x->pow;
+                        x=x->next;   
+                    }
+                    printf("\nsum=%d",sum);
+    }
+
+
+int main() 
+{
+    while(1)
+    {
+        printf("\nenter 1 insert\n");
+        printf("enter 2 delete\n");
+        printf("enter 3 for display\n");
+        printf("enter 4 for insert node\n");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {
+                insert();
+                break;
+            }
+            case 2:
+            {
+               del();
+               break;
+            }
+            case 3:
+            {
+               display();
+               break;
+            }
+          case 4:
+            {
+                Ipos();
+            }
+        }
+    }
+    return 0;
+}
