@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+class matrix{ 
+    int a[3][3],b[3][3],i,j,c[3][3];
+    public:
+    void set();
+    void get();
+};
+void matrix::set(){
+    cout<<"enter the matrix 1"<<endl;
+    for(i=0;i<3;i++){
+         for(j=0;j<3;j++){
+             cin>>a[i][j];
+         }}
+     cout<<"enter the matrix 2"<<endl;
+     for(i=0;i<3;i++){
+         for(j=0;j<3;j++){
+             cin>>b[i][j];
+         }}}
+void matrix::get(){
+    cout<<"matrix 1 "<<endl;
+    for(i=0;i<3;i++){
+         for(j=0;j<3;j++){
+             cout<<a[i][j]<<" ";
+}
+         cout<<endl;
+}
+    
+    cout<<"matrix 2 "<<endl;
+    for(i=0;i<3;i++){
+         for(j=0;j<3;j++){
+             cout<<b[i][j]<<" ";
+         }
+         cout<<endl;
+    }
+ cout<<"addition of matrix"<<endl;
+    for(i=0;i<3;i++){
+         for(j=0;j<3;j++){
+             cout<<a[i][j]+b[i][j];   
+         }
+         cout<<endl;
+    }
+  cout<<"multiplaction of matrix"<<endl;
+    for(i=0;i<3;i++){
+         for(j=0;j<3;j++)
+         {c[i][j]=0;
+             for(int x=0;x<3;x++)
+             {
+            c[i][j]+=(a[i][x]*b[x][j]);
+             }}
+         cout<<endl;
+    }
+     cout<<"multiplaction of matrix"<<endl;
+    for(i=0;i<3;i++){
+         for(j=0;j<3;j++){
+           cout<<c[i][j];
+         }
+         cout<<endl;
+    }}
+int main() {
+    matrix akash;
+    akash.set();
+    akash.get();
+    return 0;}
