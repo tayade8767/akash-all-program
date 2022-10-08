@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+class complex 
+{
+    private:
+    int real;               //delecread as a private member function
+    int img;
+    public:
+    complex(int r=0,int s=0)
+    {
+        real=r;               //use the constructor
+        img=s;
+    }
+    friend void operator<<(ostream &out,complex &c);  //make the friend
+};
+void operator<<(ostream &out,complex &c)         //use the void here
+{
+    out<<c.real<<"+i"<<c.img;                //friend is use there
+}
+
+int main() 
+{
+     complex c(12,32);
+     cout<<c;                          //print the complex
+     operator<<(cout,c);
+}
