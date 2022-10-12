@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include<stdlib.h>
+int a[100],rear=-1,front=-1,top=-1,b[100],n,value;
+
+void QTS()
+{
+    if(rear==100)
+    {
+        printf("it is null\n");
+    }
+    else
+    {
+        rear++;
+        printf("enter the value\n");
+        scanf("%d",&value);
+        a[rear]=value;
+    }
+}
+
+void QTS1()
+{
+    while(1)
+    {
+        if(front==rear)
+        {
+            printf("mission succesful\n");
+            break;
+        }
+        else
+        {
+            front++;
+            value=a[front];
+            b[++top]=value;
+        }
+    }
+}
+
+void display()
+{
+    while(1)
+    {
+            if(top==-1)
+            {
+                printf("it is null\n");
+                break;
+            }
+            else
+            {
+                value=a[top];
+                printf("%d\t",value);
+                top--;
+            }
+    }
+}
+
+int main() 
+{
+while(1)
+{
+    printf("enter 1 for in stack\n");
+    printf("enter 2 for stack to quea\n");
+    printf("enter 3 for in quea\n");
+    scanf("%d",&n);
+    switch(n)
+    {
+        case 1:
+        {
+             QTS();
+            break;
+        }
+         case 2:
+        {
+             QTS1();
+            break;
+        }
+         case 3:
+        {
+            display();
+            break;
+        }
+    }
+}
+    return 0;
+}
