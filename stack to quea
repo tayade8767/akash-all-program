@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include<stdlib.h>
+int a[100],rear=-1,front=-1,top=-1,b[100],n,value;
+
+void STQ()
+{
+    if(top==100)
+    {
+        printf("it is null\n");
+    }
+    else
+    {
+        top++;
+        printf("enter the value\n");
+        scanf("%d",&value);
+        a[top]=value;
+    }
+}
+
+void STQ1()
+{
+    while(1)
+    {
+        if(top==-1)
+        {
+            printf("mission succesful\n");
+            break;
+        }
+        else
+        {
+            value=a[top];
+            b[++rear]=value;
+            top--;
+        }
+    }
+}
+
+void display()
+{
+    if(front==rear)
+    {
+        printf("it is null\n");
+       // break;
+    }
+    else
+    {
+        front++;
+        value=a[front];
+        printf("enter the quea value::%d",value);
+    }
+}
+
+int main() 
+{
+while(1)
+{
+    printf("enter 1 for in stack\n");
+    printf("enter 2 for stack to quea\n");
+    printf("enter 3 for in quea\n");
+    scanf("%d",&n);
+    switch(n)
+    {
+        case 1:
+        {
+             STQ();
+            break;
+        }
+         case 2:
+        {
+             STQ1();
+            break;
+        }
+         case 3:
+        {
+            display();
+            break;
+        }
+    }
+}
+    return 0;
+}
