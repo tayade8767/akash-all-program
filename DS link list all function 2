@@ -1,0 +1,248 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+#define max 100         //for the array element 
+
+struct node
+{
+  int data;
+  struct node *next;
+}*ptr;
+
+int i,n,val,pos,a[max],min,l;
+
+void insert()
+{
+    struct node *p=ptr;
+    ptr=(struct node *)malloc(sizeof(struct node));
+    printf("ente the value::");
+    scanf("%d",&ptr->data);
+    ptr->next=p;
+    p=ptr;
+}
+
+void del()                            // delete the perticular position
+{
+    printf("position for delete::");
+    scanf("%d",&pos);
+    if(pos==1)
+    {
+            struct node* k=ptr;
+            ptr=ptr->next;
+            val=k->data;
+            printf("delete node value=%d",val);
+            free(k);
+    }
+    else
+    {
+        struct node *p=ptr,*q=ptr;
+        for(i=0;i<pos-1;i++)
+        {
+            q=p;
+            p=q->next;
+        }
+            
+            val=p->data;
+            q->next=p->next;
+            printf("delete node value=%d",val);
+            free(p);
+    }
+}
+void Ipos()               //to insert the node in link list
+{
+    struct node *newnode,*temp,*p=ptr;
+    printf("enter the position::");
+    scanf("%d",&pos);
+    if(pos==0)
+    {
+            newnode=(struct node *)malloc(sizeof(struct node ));
+            printf("enter the value::");
+            scanf("%d",&newnode->data);
+            newnode->next=ptr;
+            ptr=newnode;
+    }
+    else
+    {
+            temp=(struct node *)malloc(sizeof(struct node ));
+            printf("enter the value::");
+            scanf("%d",&temp->data);
+            for(i=0;i<pos-1;i++)
+            {
+                p=p->next;
+            }
+            temp->next=p->next;
+            p->next=temp;
+    }
+}
+
+void Revlink1()                      //method 1 for reverse the link list
+{
+    struct node *r=null,*q=null,*p=ptr;
+    while(p!=null)
+    {
+        r=q;
+        q=p;
+        p=p->next;
+        q->next=r;
+    }
+    ptr=q;
+    struct node *x=ptr;
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+
+void Revlink2()             //method 2 for reverse the link list using array
+{
+    struct node *p=ptr;
+    i=0;                 //if use i=-1
+    while(p!=null)       //node value put in array
+    {
+       a[i]=p->data;     //then use a[i++]
+       p=p->next;
+       i++;
+    }
+    p=ptr;
+    i--;
+    while(p!=null)      //array value store node
+    {
+        p->data=a[i];
+        p=p->next;
+        i--;
+    }
+    struct node *x=ptr;
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+
+void Revlink3(struct node *q,struct node *p)  //method 3 for reverse the link list using recursion
+{
+    if(p!=null)
+       {
+        Revlink3(p,p->next);    //call the function again 
+        p->next=q;
+       }
+    else
+       {
+          ptr=q;  
+       }
+    // struct node *p=ptr;
+    // while(q!=null)
+    // {
+    //     printf("%d\t",q->data);
+    //     q=q->next;
+    // }
+}
+
+void max1()              //max element linklist method 1
+{
+    struct node *p=ptr;
+    int mx=0;
+    while(p!=null)
+    {
+        if(mx<p->data)
+        {
+            mx=p->data;
+        }
+          p=p->next;
+    }
+    printf("the maximum element in the link list::%d",mx);
+}
+
+// int Rmax2(struct node *p)
+// {
+//     if(min>p->data)
+//     {
+//          min=p->data; 
+//           Rmax2(p->next);
+//     }
+//     else
+//     {
+//         return min;
+//     }
+//     //printf("the maximum element in the link list::%d",min);
+// }
+
+
+void display()                 //display the link list
+{
+    struct node *x=ptr;
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+
+int main() 
+{
+    while(1)
+    {
+        printf("\nenter 1 insert\n");
+        printf("enter 2 delete\n");
+        printf("enter 3 for display\n");
+        printf("enter 4 for insert node\n");
+   printf("enter 5 for reverse linklist method 1 using sliding pointer\n");
+   printf("enter 6 for reverse linklist method 2 using array\n");
+  printf("enter 7 for reverse linklist method 3 using recursion\n");
+  printf("enter 8 for max element using simple method");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {
+                insert();
+                break;
+            }
+            case 2:
+            {
+               del();
+               break;
+            }
+            case 3:
+            {
+               display();
+               break;
+            }
+            case 4:
+            {
+                Ipos();
+                break;
+            }
+            case 5:
+            {
+                Revlink1();
+                break;
+            }
+            case 6:
+            {
+                Revlink2();
+                break;
+            }
+            case 7:
+            {
+                struct node *q=null;
+                struct node *p=ptr;
+                Revlink3(q,p);
+                break;
+            }
+            case 8:
+            {
+                max1();
+                break;
+            }
+            case 9:
+            {
+                l=Rmax2(ptr);
+                printf("minimum element in the linklist::%d",l);
+                break;
+            }
+        }
+    }
+    return 0;
+}
