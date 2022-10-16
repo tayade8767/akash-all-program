@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+class person                                              //it is the BASE CLASS or PARENT CLASS or SUPER CLASS
+{
+  private:
+  int id;
+  string name;
+  public:
+  int mob;
+  void set_p()
+  {
+      cout<<"enter the id::";
+      cin>>id;
+      cout<<"enter the name::";
+      cin>>name;
+      cout<<"enter the mobile number::";
+      cin>>mob;
+  }
+  void display_1()
+  {
+      cout<<"this is the ID::"<<id<<endl;
+      cout<<"this is the name::"<<name<<endl;
+      cout<<"this is the mobile number::"<<mob<<endl;
+  }
+};
+class student:public person                              // it is the CHILD CLASS or DERIVED CLASS or SUB CLASS
+{                                                        //it can be inhert the properties from parent class or base class
+    public:
+  string school;
+  float pointer;
+  void set_s()
+  {
+      cout<<"calling to the set of person class"<<endl;
+      set_p();
+      cout<<"enter the school name";
+      cin>>school;
+      cout<<"enter the pointer::";
+      cin>>pointer;
+  }
+  void display_2()
+  {
+      cout<<"calling to the display of person class"<<endl;
+      display_1();
+      cout<<"this is the SCHOOL NAME::"<<school<<endl;
+      cout<<"this is the pointer in first year::"<<pointer<<endl;
+  }
+};
+int main()
+{
+    student s;
+    cout<<"calling to the student clas of setter function"<<endl;
+    s.set_s();
+    cout<<"calling to the student class of display"<<endl;
+    s.display_2();
+    return (0);
+}
