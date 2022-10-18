@@ -1,0 +1,51 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+class parent
+{
+   private:
+  int rollno;
+  string name;
+  public:
+  void set1(int n,string name);
+  void display1();
+};
+void parent::set1(int n,string name)
+{
+    this->rollno=n;
+    this->name=name;
+}
+void parent::display1()
+{
+    cout<<"Roll Number="<<rollno<<endl;
+    cout<<"name of student="<<name<<endl;
+}
+class child:private parent
+{
+    private:
+  float data;  
+  public:
+  void set2(int,string,float);
+  void display2();
+};
+
+void child::set2(int n,string name,float data)
+{
+    set1(n,name);
+    this->data=data;
+}
+
+void child::display2()
+{
+    display1();
+    cout<<"data in float="<<data<<endl;
+}
+
+int main()
+{
+  child z;
+  z.set2(8767,"akash",9.3);
+  z.display2();
+  return(0);
+}
