@@ -1,0 +1,184 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node
+{
+    int data;
+    struct node *next;
+}*first,*second;
+int n;
+struct node *third;
+
+void linklist_1(int a[],int n)
+{
+   struct node *p=first,*temp;
+   first=(struct node *)malloc(sizeof(struct node));
+   first->data=a[0];
+   first->next=null;
+   p=first;
+   for(int i=1;i<n;i++)
+   {
+       temp=(struct node *)malloc(sizeof(struct node));
+       temp->data=a[i];
+       p->next=temp;
+       p=temp;
+   }
+}
+
+void linklist_2(int a[],int n)
+{
+  struct node *p=second,*temp;
+  second=(struct node *)malloc(sizeof(struct node));
+  second->data=a[0];
+  second->next=null;
+  p=second;
+  for(int i=1;i<n;i++)
+  {
+      temp=(struct node *)malloc(sizeof(struct node));
+      temp->data=a[i];
+      p->next=temp;
+      p=temp;
+  }
+}
+
+void concatinate()
+{
+  struct node *p;
+  p=first;
+  while(p->next!=null)
+  {
+     p=p->next;
+  }
+  p->next=second;
+}
+
+void display1()                 //display the link list
+{
+    struct node *x=first;
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+
+void display2()                 //display the link list
+{
+    struct node *x=second;
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+
+void merg()
+{
+    struct node *last;
+    if(first->data<second->data)
+    {
+        third=last=first;
+        first=first->next;
+        last->next=null;
+    }
+    else
+    {
+        third=last=second;
+        second=second->next;
+        last->next=null;
+    }
+    while(first!=null&&second!=null)
+    {
+        if(first->data<second->data)
+        {
+            last->next=first;
+            last=first;
+            first=first->next;
+            last->next=null;
+        }
+        else
+        {
+            last->next=second;
+            last=second;
+            second=second->next;
+            last->next=null;
+        }
+    }
+    if(first!=null)
+    {
+        last->next=first;
+    }
+    else
+    {
+        last->next=second;
+    }
+}
+
+void display3()
+{
+   struct node *a=third;
+    while(a!=null)
+    {
+        printf("%d\t",a->data);
+        a=a->next;
+    }
+}
+
+int main()
+{
+    int x[]={10,14,15,18,166};
+    int y[]={11,12,13,16,17,19,170};
+    while(1)
+    {
+         printf("enter 1 for link list 1\n");
+         printf("enter 2 for link list 2\n");
+         printf("enter 3 for concatinate\n");
+         printf("enter 4 for display linklist 1\n");
+         printf("enter 5 for display linklist 5\n");
+         printf("enter 6 for merging the link list\n");
+         printf("enter 7 for display the merg linklist\n");
+       scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {
+                linklist_1(x,5);
+                printf("it can be done sucessesfully  1\n");
+                break;
+            }
+            case 2:
+            {
+                linklist_2(y,7);
+                    printf("it can be done sucessesfully  2\n");
+                break;
+            }
+            case 3:
+            {
+                concatinate();
+                printf("concatinating succesfully\n");
+                break;
+            }
+            case 4:
+            {
+                display1();
+                break;
+            }
+            case 5:
+            {
+                display2();
+                break;
+            }
+            case 6:
+            {
+                merg();
+                printf("merging succesfully\n");
+                break;
+            }
+            case 7:
+            {
+                display3();
+                break;
+            }
+        }
+    }
+}
