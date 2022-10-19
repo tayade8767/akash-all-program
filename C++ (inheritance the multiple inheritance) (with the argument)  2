@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+class A
+{
+    protected:
+    int a;
+  public:
+  void set1()
+  {
+      cout<<"enter the value of a"<<endl;
+      cin>>a;
+  }
+  void display1()
+  {
+      cout<<"the value a="<<a<<endl;
+  }
+};
+class B:public A
+{
+    protected:
+    int b;
+  public:
+  void set2()
+  {
+      cout<<"enter the value of b"<<endl;
+      cin>>b;
+  }
+  void display2()
+  {
+      cout<<"the value of b="<<b<<endl;
+  }
+};
+class c:public B
+{
+     protected:
+    int c,p;
+  public:
+  void set3()
+  {
+      cout<<"enter the value of c"<<endl;
+      cin>>c;
+  }
+  void display3()
+  {
+      cout<<"the value of c="<<c<<endl;
+  }
+  void product()
+  {
+      p=a*b*c;
+      cout<<"the product of a,b,c="<<p<<endl;
+  }
+};
+int main()
+{
+    c a;
+    a.set1();
+    a.set2();
+    a.set3();                                   //WE CAN AXCESS THE TOTAL PARENT CLASS USING BASE CLASS
+    a.display1();
+    a.display2();
+    a.display3();
+    a.product();
+    return (0);
+}
