@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+class A
+{
+  public:                                     //base/parent/super class
+  A()
+  {
+      cout<<"base class 1"<<endl;
+  }
+};
+class B:public A
+{
+  public:
+  B()
+  {
+      cout<<"base class 2"<<endl;
+  }
+};
+class c:public A                //derived/child/sub class
+{
+  public:
+  c()
+  {
+      cout<<"base class 3"<<endl;
+  }
+};
+int main()
+{
+    c a;
+    B m;
+    return(0);
+}
