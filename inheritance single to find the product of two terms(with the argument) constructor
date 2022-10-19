@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+class akash
+{
+    protected:
+    int a;
+  public:
+  akash();
+  void display1()
+  {
+     cout<<"the value of a="<<a<<endl; 
+  }
+};
+ akash::akash()
+  {
+      
+      cout<<"enter for the value of a"<<endl;
+     cin>>a;
+  }
+class vikee:public akash
+{
+    private:
+    int b;
+    public:
+    vikee(int);
+  void display2()
+  {
+      display1();
+      cout<<"the value of b="<<b<<endl;
+  }
+ void product();
+};
+vikee::vikee(int b)  //not passed the value to the parent class constructor
+  {
+      cout<<"enter for the value of b"<<endl;
+      this->b=b;
+  }
+
+void vikee::product()
+{
+    cout<<"the value of product of a*b="<<a*b<<endl;
+}
+
+int main()
+{
+    vikee k(2);
+    k.display2();
+    k.product();
+    return(0);
+}
