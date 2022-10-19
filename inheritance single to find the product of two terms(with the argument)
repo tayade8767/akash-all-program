@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+class akash
+{
+    protected:
+    int a;
+  public:
+ void aka1(int a)
+  {
+      cout<<"enter for the value of a"<<endl;
+     this->a=a;
+  }
+  void display1()
+  {
+     cout<<"the value of a="<<a<<endl; 
+  }
+};
+class vikee:public akash
+{
+    private:
+    int b;
+    public:
+  void aka2(int a,int b)
+  {
+      aka1(a);
+      cout<<"enter for the value of b"<<endl;
+      this->b=b;
+  }
+  void display2()
+  {
+      display1();
+      cout<<"the value of b="<<b<<endl;
+  }
+ void product();
+};
+
+void vikee::product()
+{
+    cout<<"the value of product of a*b="<<a*b<<endl;
+}
+
+int main()
+{
+    vikee k;
+    k.aka2(2,3);
+    k.display2();
+    k.product();
+    return(0);
+}
