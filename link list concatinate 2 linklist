@@ -1,0 +1,102 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node
+{
+    int data;
+    struct node *next;
+}*first,*second;
+int n;
+
+void linklist_1()
+{
+   struct node *p=first;
+   first=(struct node *)malloc(sizeof(struct node));
+   printf("enter the value for linklist 1::");
+   scanf("%d",&first->data);
+   first->next=p;
+   p=first;
+}
+
+void linklist_2()
+{
+  struct node *p=second;
+  second=(struct node *)malloc(sizeof(struct node));
+  printf("enter the value for linklist 2::");
+  scanf("%d",&second->data);
+  second->next=p;
+  p=second;
+}
+
+void concatinate()
+{
+  struct node *p;
+  p=first;
+  while(p->next!=null)
+  
+  {
+     p=p->next;
+  }
+  p->next=second;
+}
+
+void display1()                 //display the link list
+{
+    struct node *x=first;
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+
+void display2()                 //display the link list
+{
+    struct node *x=second;
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+
+int main()
+{
+    while(1)
+    {
+        printf("enter 1 for link list 1\n");
+       printf("enter 2 for link list 2\n");
+        printf("enter 3 for concatinate\n");
+         printf("enter 4 for display linklist 1\n");
+ printf("enter 4 for display linklist 5\n");
+       scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {
+                linklist_1();
+                break;
+            }
+            case 2:
+            {
+                linklist_2();
+                break;
+            }
+            case 3:
+            {
+                concatinate();
+                break;
+            }
+            case 4:
+            {
+                display1();
+                break;
+            }
+            case 5:
+            {
+                display2();
+                break;
+            }
+        }
+    }
+}
