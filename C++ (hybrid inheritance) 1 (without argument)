@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+class A
+{
+  public:
+  A()
+  {
+  cout<<"base class A"<<endl;
+  }
+};
+class B
+{
+    public:
+    B()
+    {
+    cout<<"iT IS THE B class"<<endl;
+    }
+};
+class C:public A
+{
+  public:
+  C()
+  {
+  cout<<"it is class C"<<endl;
+  }
+};
+class D:public A,public B
+{
+    public:
+    D()
+    {
+    cout<<"it is class D"<<endl;
+    }
+};
+int main()
+{
+    D d;
+    C c;
+}
