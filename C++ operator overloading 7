@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class complex
+{
+  public:
+  int real;
+  int img;
+  complex(int x=0,int y=0)
+  {
+      real=x;
+      img=y;
+  }
+void display()
+{
+    cout<<real<<"+i"<<img<<endl;
+}
+};
+int main() 
+{
+    complex c1(10,300);
+    complex c2(1234,5000);
+    c1.display();
+    c2.display();
+    c1=c2;                              //we can give the =    but not ==
+    c1.display();
+    return 0;
+}
