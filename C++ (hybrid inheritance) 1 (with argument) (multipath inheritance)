@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+class A
+{
+  public:
+    int a;
+};
+class B: public A
+{
+  public:
+    int b;
+};
+class C: public A
+{
+  public:
+    int c;
+};
+class D:public C,public B
+{
+  public:
+    int d;
+};
+int main()
+{
+    D d;
+    
+    d.B::a=100;
+    d.C::a=800;
+    
+    d.b=1;
+    d.c=2;
+    d.d=3;
+    cout<<"\n class a from b"<<d.B::a<<endl;
+    cout<<"\n class a from c"<<d.C::a<<endl;
+    
+    cout<<d.b<<endl;
+    cout<<d.c<<endl;
+    cout<<d.d<<endl;
+}
