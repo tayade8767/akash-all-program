@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+class complex
+{
+  public:
+  int real;
+  int img;
+  complex(int x=0,int y=0)
+  {
+      real=x;
+      img=y;
+  }
+void display()
+{
+    cout<<real<<"+i"<<img<<endl;
+}
+};
+int main() 
+{
+    complex c1;
+    c1.real=1,c1.img=20;
+    c1.display();
+    c1=1000;
+    c1.display();
+    return 0;
+}
