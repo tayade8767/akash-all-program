@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+class A
+{
+  public:
+    int a;
+};
+class B:virtual public A
+{
+  public:
+    int b;
+};
+class C:virtual public A       //virtual is use to remove the ambinuousness
+{
+  public:
+    int c;
+};
+class D:public C,public B
+{
+  public:
+    int d;
+};
+int main()
+{
+    D d;
+    
+    d.a=100;       //it present in here
+    d.a=800;    //instaid of d.D::a=800  use virtual  to remove ambiuseness
+    
+    d.b=1;
+    d.c=2;
+    d.d=3;
+    cout<<"\n class a from b"<<d.B::a<<endl;
+    cout<<"\n class a from c"<<d.C::a<<endl;
+    
+    cout<<"b="<<d.b<<endl;
+    cout<<"c="<<d.c<<endl;
+    cout<<"d="<<d.d<<endl;
+}
