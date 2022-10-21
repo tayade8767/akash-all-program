@@ -1,0 +1,169 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+
+struct node
+{
+    int data;
+    struct node *next;
+}*first;
+int n,pos,value;
+void Cinsert()
+{
+    struct node *p=first;
+    first=(struct node *)malloc(sizeof(struct node));
+    printf("enter the value::");
+    scanf("%d",&first->data);
+    first->next=p;
+    p=first;
+}
+
+void Cdisplay()
+{
+    struct node *p=first;
+    printf("\n");
+    do
+    {
+        printf("%d\t",p->data);
+        p=p->next;
+    } while(p!=first);
+}
+
+void circular()
+{
+    struct node *p=first;
+    while(p->next!=null)
+    {
+        p=p->next;
+    }
+    p->next=first;
+}
+
+void Cinsertpos()
+{
+    struct node *p=first,*t;
+    t=(struct node *)malloc(sizeof(struct node));
+    printf("enter the position:::::::::::::::::::::::::::");
+    scanf("%d",&pos);
+    if(pos==0)
+    {
+            if(first==null)
+            {
+                first=t;
+                printf("no node is created\n");
+                printf("enter the value:::::::::::::::::::");
+                scanf("%d",&t->data);
+                first->next=first;
+    
+            }
+            else
+            {
+                //struct node *m=first;
+                while(p->next!=first)
+                {
+                    p=p->next;
+                }
+                printf("enter the value:::::::::::::::::::");
+                scanf("%d",&t->data);
+                p->next=t;
+                t->next=first;
+                first=t;
+            }
+    }
+    else
+    {
+        for(int i=1;i<pos-1;i++)
+        {
+            p=p->next;
+        }
+        printf("enter the value:::::::::::::::::::");
+        scanf("%d",&t->data);
+        t->next=p->next;
+        p->next=t;
+    }
+}
+
+void Cdeletepos()
+{
+    struct node *p=first,*t;
+    printf("enter the position for delete::");
+    scanf("%d",&pos);
+   // t=(struct node *)malloc(sizeof(struct node));
+    if(pos==1)
+    {
+            while(p->next!=first)
+            {
+            p=p->next;
+            } 
+            value=first->data;
+
+                if(p==first)
+                {
+                    printf("it is delected value::::%d\n",value);
+                    printf("no node is present in linklist\n");
+                    free(first);
+                    first=null;
+                }
+                else
+                {
+                    p->next=first->next;
+                    free(first);
+                    first=p->next;
+                    printf("it is delected value::::%d",value);
+                }
+    }
+    else
+    {
+               for(int i=1;i<pos-1;i++)
+               {
+                   p=p->next;
+               }
+               t=p->next;
+               value=t->data;
+               p->next=t->next;
+               printf("it is delected value::::%d",value);
+               free(t);
+    }
+}
+
+int main()
+{
+    while(1)
+    {
+        printf("\nenter 1 for create a circular linklist\n");
+        printf("enter 2 for display circular linklist\n");
+        printf("enter 3 for to make circular\n");
+        printf("enter 4 for insert at any position\n");
+        printf("enter 5 fordelete position\n");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {
+                Cinsert();
+                break;
+            }
+            case 2:
+            {
+                Cdisplay();
+                break;
+            }
+            case 3:
+            {
+                circular();
+                printf("we can make circular linklist sucessfully\n");
+                break;
+            }
+            case 4:
+            {
+                Cinsertpos();
+                break;
+            }
+            case 5:
+            {
+                Cdeletepos();
+                break;
+            }
+        }
+    }
+}
