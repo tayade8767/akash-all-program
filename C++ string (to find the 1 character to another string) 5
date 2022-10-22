@@ -1,0 +1,18 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+ int main()
+ {
+	char name[25],akash[25];
+	
+	cout<<"enter the string 2"<<endl;
+	cin.get(name, 25);           //  not read spaces
+
+     //to found the 1 character in   another string
+    cout<<"to found the 1 character in   another string="<<strchr(name,'a')<<endl;
+
+    //to found the 1 character in   another string from right hand side of string
+    cout<<"to found the 1 character in   another string="<<strrchr(name,'a')<<endl;
+
+	return 0;
+}
