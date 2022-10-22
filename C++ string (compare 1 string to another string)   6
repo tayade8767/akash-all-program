@@ -1,0 +1,22 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+ int main()
+ {
+	char name[25],akash[25];
+	
+	cout<<"enter the string 2"<<endl;
+	cin.get(name, 25);           //  not read spaces
+	
+ 	cout<<"enter the string 2"<<endl;
+ 	cin>>akash;           //  not read spaces
+ 
+     //to compare 1 string to another string
+    cout<<"to compare 1 string to another string="<<strcmp(name,akash)<<endl;
+    
+	return 0;
+}
+
+///////////////////////////   1) if string 1 =string 2  then gives (0)
+///////////////////////////   1) if string 1 < string 2  then gives (1)
+///////////////////////////   1) if string 1 > string 2  then gives (-1)
