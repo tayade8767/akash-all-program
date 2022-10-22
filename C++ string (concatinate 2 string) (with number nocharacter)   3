@@ -1,0 +1,23 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+ int main()
+ {
+	char name[25],akash[25];
+	
+	cout<<"enter the string 2"<<endl;
+	cin.get(name, 25);           //  not read spaces
+	cout << name<<endl;
+	
+	cout<<"enter the string 2"<<endl;
+	cin>>akash;           //  not read spaces
+	cout << akash<<endl;
+     
+     //combination OR concatinate of string
+     cout<<"combination OR concatinate of string="<<strcat(name,akash)<<endl;
+
+//combination OR concatinate of string n represent the number of character
+     cout<<"combination OR concatinate of string="<<strncat(name,akash,2)<<endl;
+
+	return 0;
+}
