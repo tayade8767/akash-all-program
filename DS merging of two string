@@ -1,0 +1,205 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node
+{
+    int data;
+    struct node *next;
+}*first,*second;
+int z;
+struct node *t,*last,*p,*q=null,*r=null,*third,*l,*m,*n;
+
+void linklist_1()
+{
+   struct node *p=first;
+   first=(struct node *)malloc(sizeof(struct node));
+   printf("enter the value for linklist 1::");
+   scanf("%d",&first->data);
+   first->next=p;
+   p=first;
+}
+
+void linklist_2()
+{
+  struct node *p=second;
+  second=(struct node *)malloc(sizeof(struct node));
+  printf("enter the value for linklist 2::");
+  scanf("%d",&second->data);
+  second->next=p;
+  p=second;
+}
+
+void concatinate()
+{
+  struct node *p;
+  p=first;
+  while(p->next!=null)
+  
+  {
+     p=p->next;
+  }
+  p->next=second;
+}
+
+void display1()                 //display the link list
+{
+    struct node *x=first;
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+
+void display2()                 //display the link list
+{
+    struct node *k=second;
+    while(k!=null)
+    {
+        printf("%d\t",k->data);
+        k=k->next;
+    }
+}
+
+void merg()
+{
+
+    if(first->data < second->data)
+    {
+        third = last = first;
+        first = first->next;
+        last->next = NULL;
+    } 
+    else 
+    {
+            third = last = second;
+            second = second->next;
+            last->next = NULL;
+    }
+while(first != NULL && second != NULL)
+{
+    if(first->data < second->data)
+    {
+        last->next = first;
+        last = first;
+        first = first->next;
+        last->next = NULL;
+    }
+    else
+    {
+        last->next = second;
+        last = second;
+        second = second->next;
+        last->next = NULL;
+    }
+}
+if(first != NULL) 
+{
+   last->next = first;
+}
+else
+{
+     last->next = second;
+}
+//void display3()
+//{
+   struct node *p=third;
+    while(p!=null)
+    {
+        printf("%d\t",p->data);
+        p=p->next;
+    }
+//}
+}
+
+ void Reaverse1()
+ {
+    p=first;
+    while(p!=null)
+    {
+        r=q;
+        q=p;
+        p=p->next;
+        q->next=r;
+    }
+    first=q;
+ }
+
+ void Reaverse2()
+ {
+    n=second;
+    while(n!=null)
+    {
+        l=m;
+        m=n;
+        n=n->next;
+        m->next=l;
+    }
+    second=m;
+ }
+
+
+int main()
+{
+    while(1)
+    {
+         printf("enter 1 for link list 1\n");
+         printf("enter 2 for link list 2\n");
+         printf("enter 3 for concatinate\n");
+         printf("enter 4 for display linklist 1\n");
+         printf("enter 5 for display linklist 5\n");
+         printf("enter 6 for merging the link list\n");
+         printf("enter 7 for display the merg linklist\n");
+       scanf("%d",&z);
+        switch(z)
+        {
+            case 1:
+            {
+                linklist_1();
+                break;
+            }
+            case 2:
+            {
+                linklist_2();
+                break;
+            }
+            case 3:
+            {
+                concatinate();
+                printf("concatinating succesfully\n");
+                break;
+            }
+            case 4:
+            {
+                display1();
+                break;
+            }
+            case 5:
+            {
+                display2();
+                break;
+            }
+            case 6:
+            {
+                merg();
+                printf("merging succesfully\n");
+                break;
+            }
+           /* case 7:
+            {
+                display3();
+                break;
+            }*/
+            case 8:
+            {
+                Reaverse1();
+                break;
+            }
+            case 9:
+            {
+                Reaverse2();
+                break;
+            }
+        }
+    }
+}
