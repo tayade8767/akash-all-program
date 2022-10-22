@@ -1,0 +1,25 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+ int main()
+ {
+	char name[25],akash[25];
+	
+	cout<<"enter the string 2"<<endl;
+	cin.get(name, 25);           //  not read spaces
+//	cout << name<<endl;
+	
+ 	cout<<"enter the string 2"<<endl;
+ 	cin>>akash;           //  not read spaces
+ 	//cout << akash<<endl;
+     
+     //to found the one string to another
+    cout<<"to found the one string to another="<<strstr(name,akash)<<endl;
+
+	return 0;
+}
+
+
+
+///////in this akash string character is found in name then rest of string is found
+//example (programming) 1  (gram)  2    print the (gramming)
