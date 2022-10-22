@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+ int main()
+ {
+     char a[30],c[50];
+	char name[25];
+     
+     cout<<"enter the string 3"<<endl;     
+     cin.getline(c,50);           //read spaces and new line
+     cout<<c<<endl;
+     
+	cout<<"enter the string 2"<<endl;
+	cin.get(name, 25);           //  not read spaces
+	cout << name;
+	
+     cout<<"enter the string 1"<<endl;
+     cin>>a;
+     cout<<a<<endl;
+
+	return 0;
+}
