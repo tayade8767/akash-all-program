@@ -1,0 +1,23 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+ int main()
+ {
+	char name[25],akash[25];
+	
+	cout<<"enter the string 2"<<endl;
+	cin.get(name, 25);           //  not read spaces
+	
+ 	cout<<"enter the string 2"<<endl;
+ 	cin>>akash;           //  not read spaces
+     
+     //to convert the string to long
+     long y=strtol(name,NULL,5);
+    cout<<"to convert the string to long="<<y<<endl;
+ 
+//to convert the string to float    
+float x=strtof(akash,NULL);
+    cout<<"to convert the string to float="<<x<<endl;
+
+	return 0;
+}
