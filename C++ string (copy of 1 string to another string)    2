@@ -1,0 +1,16 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+ int main()
+ {
+	char name[25],akash[25];
+	
+	cout<<"enter the string 2"<<endl;
+	cin.get(name, 25);           //  not read spaces
+	cout << name<<endl;
+     
+     //copy of string 
+     cout<<"copy of name string to akash string="<<strcpy(akash,name)<<endl;
+
+	return 0;
+}
