@@ -1,0 +1,428 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+#define max 100         //for the array element 
+
+struct node
+{
+  int data;
+  struct node *next;
+}*ptr,*ptr1;
+
+int i,n,val,pos,a[max],min,l;
+
+void insert1()
+{
+    struct node *p=ptr;
+    ptr=(struct node *)malloc(sizeof(struct node));
+    printf("ente the value::");
+    scanf("%d",&ptr->data);
+    ptr->next=p;
+    p=ptr;
+}
+
+void insert2()
+{
+    struct node *p=ptr1;
+    ptr1=(struct node *)malloc(sizeof(struct node));
+    printf("enter the value for linklist 2::");
+    scanf("%d",&ptr1->data);
+    ptr1->next=p;
+    p=ptr1;
+}
+
+void del()                            // delete the perticular position
+{
+    printf("position for delete::");
+    scanf("%d",&pos);
+    if(pos==1)
+    {
+            struct node* k=ptr;
+            ptr=ptr->next;
+            val=k->data;
+            printf("delete node value=%d",val);
+            free(k);
+    }
+    else
+    {
+        struct node *p=ptr,*q=ptr;
+        for(i=0;i<pos-1;i++)
+        {
+            q=p;
+            p=q->next;
+        }
+
+            val=p->data;
+            q->next=p->next;
+            printf("delete node value=%d",val);
+            free(p);
+    }
+}
+void Ipos()               //to insert the node in link list
+{
+    struct node *newnode,*temp,*p=ptr;
+    printf("enter the position::");
+    scanf("%d",&pos);
+    if(pos==0)
+    {
+            newnode=(struct node *)malloc(sizeof(struct node ));
+            printf("enter the value::");
+            scanf("%d",&newnode->data);
+            newnode->next=ptr;
+            ptr=newnode;
+    }
+    else
+    {
+            temp=(struct node *)malloc(sizeof(struct node ));
+            printf("enter the value::");
+            scanf("%d",&temp->data);
+            for(i=0;i<pos-1;i++)
+            {
+                p=p->next;
+            }
+            temp->next=p->next;
+            p->next=temp;
+    }
+}
+
+void Revlink1()                      //method 1 for reverse the link list
+{
+    struct node *r=null,*q=null,*p=ptr;
+    while(p!=null)
+    {
+        r=q;
+        q=p;
+        p=p->next;
+        q->next=r;
+    }
+    ptr=q;
+    struct node *x=ptr;
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+
+void Revlink2()             //method 2 for reverse the link list using array
+{
+    struct node *p=ptr;
+    i=0;                 //if use i=-1
+    while(p!=null)       //node value put in array
+    {
+       a[i]=p->data;     //then use a[i++]
+       p=p->next;
+       i++;
+    }
+    p=ptr;
+    i--;
+    while(p!=null)      //array value store node
+    {
+        p->data=a[i];
+        p=p->next;
+        i--;
+    }
+    struct node *x=ptr;
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+
+void Revlink3(struct node *q,struct node *p)  //method 3 for reverse the link list using recursion
+{
+    if(p!=null)
+       {
+        Revlink3(p,p->next);    //call the function again 
+        p->next=q;
+       }
+    else
+       {
+          ptr=q;  
+       }
+    // struct node *p=ptr;
+    // while(q!=null)
+    // {
+    //     printf("%d\t",q->data);
+    //     q=q->next;
+    // }
+}
+
+void max1()              //max element linklist method 1
+{
+    struct node *p=ptr;
+    int mx=0;
+    while(p!=null)
+    {
+        if(mx<p->data)
+        {
+            mx=p->data;
+        }
+          p=p->next;
+    }
+    printf("the maximum element in the link list::%d",mx);
+}
+
+// int Rmax2(struct node *p)
+// {
+//     if(min>p->data)
+//     {
+//          min=p->data; 
+//           Rmax2(p->next);
+//     }
+//     else
+//     {
+//         return min;
+//     }
+//     //printf("the maximum element in the link list::%d",min);
+// }
+
+
+void display1()                 //display the link list
+{
+    struct node *x=ptr;
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+
+void display2()                 //display the link list
+{
+    struct node *x=ptr1;
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+
+void concatinate()
+{
+    struct node *t=ptr;
+    while(t->next!=null)
+    {
+        t=t->next;
+    }
+    t->next=ptr1;
+}
+
+void dublicate()//it is for the find out the dublicate in linklist and remove it
+{
+    struct node *q=null,*p=ptr;
+    while(p!=null)
+    {
+        q=p;
+        p=p->next;
+        if(q->data==p->data)
+        {
+            q->next=p->next;
+            free(p);
+            p=q->next;
+        }
+        else
+        {
+            printf("not equal\n");
+        }
+    }
+}
+
+void  shorted()
+{
+    struct node *p=ptr->next,*q=ptr;
+     while(p!=null)
+    {
+        if(q->data<p->data)
+        {
+            //printf("it is shoreted\n");
+            q=p;
+            p=p->next;
+        }
+        else
+        {
+            printf("not it is shoreted\n");
+            break;
+        }
+    }
+    if(p==null)
+    {
+        printf("it is shorted\n");
+    }
+    else
+    {
+        printf("it not shorted\n");
+    }
+}
+
+void merging()
+{
+    struct node *last,*third;
+    if(ptr->data < ptr1->data)
+    {
+        third=last=ptr;
+        ptr=ptr->next;
+        last->next=null;
+    }
+    else
+    {
+        third=last=ptr1;
+        ptr1=ptr1->next;
+        last->next=null;
+    }
+ while(ptr!=null && ptr1!=null)
+ {
+    if(ptr->data < ptr1->data)
+    {
+        last->next=ptr;
+        last=ptr;
+        ptr=ptr->next;
+        last->next=null;
+    }
+    else
+    {
+        last->next=ptr1;
+        last=ptr1;
+        ptr1=ptr1->next;
+        last->next=null;
+    }
+ }
+    if(ptr==null)
+    {
+        last->next=ptr1;
+        
+    }
+    else
+    {
+        last->next=ptr;
+    }
+    
+  struct node *x=third;
+   while(x!=null)
+   {
+       printf("%d\t",x->data);
+       x=x->next;
+   }
+}
+
+void circular()
+{
+    struct node *z=ptr;
+    while(z->next!=null)
+    {
+        z=z->next;
+    }
+    z->next=ptr;
+}
+
+int main() 
+{
+    while(1)
+    {
+  printf("\nenter 1 insert\n");
+  printf("enter 2 delete\n");
+  printf("enter 3 for display\n");
+  printf("enter 4 for insert node\n");
+  printf("enter 5 for reverse linklist method 1 using sliding pointer\n");
+  printf("enter 6 for reverse linklist method 2 using array\n");
+  printf("enter 7 for reverse linklist method 3 using recursion\n");
+  printf("enter 8 for max element using simple method\n");
+  printf("enter 10 for 2nd linklist\n");
+  printf("enter 11 for display linklist 2\n");
+  printf("enter 12 for concatinate\n");
+  printf("enter 13 for remove the dublicate\n");
+  printf("enter 14 for linlist shorted or not\n");
+  printf("enter 15 for meging of linklist\n");
+  printf("enter 16 for to make linklist circular\n");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {
+                insert1();
+                break;
+            }
+            case 2:
+            {
+               del();
+               break;
+            }
+            case 3:
+            {
+               display1();
+               break;
+            }
+            case 4:
+            {
+                Ipos();
+                break;
+            }
+            case 5:
+            {
+                Revlink1();
+                break;
+            }
+            case 6:
+            {
+                Revlink2();
+                break;
+            }
+            case 7:
+            {
+                struct node *q=null;
+                struct node *p=ptr;
+                Revlink3(q,p);
+                break;
+            }
+            case 8:
+            {
+                max1();
+                break;
+            }
+            // case 9:
+            // {
+            //     l=Rmax2(ptr);
+            //     printf("minimum element in the linklist::%d",l);
+            //     break;
+            // }
+            case 10:
+            {
+                insert2();
+                break;
+            }
+            case 11:
+            {
+                display2();
+                break;
+            }
+            case 12:
+            {
+                concatinate();            // concatination of two link list 
+                break;
+            }
+            case 13:
+            {
+                dublicate();
+                break;
+            }
+            case 14:
+            {
+                shorted();
+                break;
+            }
+            case 15:
+            {
+                merging();
+                break;
+            }
+            case 16:
+            {
+               circular();   //only for linklist ptr
+               printf("\n\nptr circular succesfully\n\n");
+                break;
+            }
+        }
+    }
+    return 0;
+}
