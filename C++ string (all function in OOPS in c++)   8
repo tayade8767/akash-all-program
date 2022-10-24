@@ -1,0 +1,137 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int i,j;
+ int main()
+ {
+	string name;
+	string akash;
+	cout<<"enter the string 1"<<endl;
+	getline(cin,name);
+	cout<<"enter the string 2"<<endl;
+	getline(cin,akash);
+
+//comparision of string
+	cout<<"comparison of string="<<name.compare(akash)<<endl;
+	cout<<"comparison of string="<<akash.compare(name)<<endl;
+
+//str.at()  it is only for read the index character
+cout<<"it is only for read the index characte in string="<<name.at(3)<<endl;     
+//str[index]  it is for read and write the index character
+cout<<"it is for read and write the index character in string="<<name[3]<<endl;     //name[3]="k"  for
+
+//gives the first character of the string
+	cout<<"gives the first character of the string="<<name.front()<<endl;
+//gives the last character of the string
+	cout<<"gives the last character of the string="<<akash.back()<<endl;
+
+//addition of 2 string comonlly use the (+)
+cout<<"addtion of 2 string="<<name+akash<<endl;
+
+//copy from 1 string from 2nd string
+name=akash;
+  cout<<"copy from akash to name="<<name<<endl;
+
+  //string iterator is use for traversing a string
+  string::iterator it ;
+  for(it=name.begin();it!=name.end();it++)
+  {
+	   cout<<*it<<endl;
+  }
+
+//string iterator is use for traversing a string
+ // string::iterator it ;
+  for(it=name.end();it!=name.begin();it--)
+  {
+	   cout<<*it<<endl;
+  }
+
+  //reverse string iterator is use for traversing a string
+  string::reverse_iterator pk ;
+  for(pk=name.rbegin();pk!=name.rend();pk++)
+  {
+	   cout<<*pk<<endl;
+  }
+
+for(i=0,j=name.length()-1;i<name.length();i++,j--)
+  {
+	   akash[i]=akash[j];
+	  cout<<"it pallandrome"<<endl;
+  }
+
+
+
+	//cin.get(name, 25);           //  not read spaces
+  //  cout<<name<<endl;
+    //to find the length of string
+    cout<<"length of string="<<name.length()<<endl;
+
+//to find the size of string
+    cout<<"size of string="<<name.size()<<endl;
+
+	//to swap the string
+	swap(name,akash);             //another way =====    name.swap(akash);
+    cout<<"after the swapping name="<<name<<endl;
+	cout<<"after the swapping akash="<<akash<<endl;
+    name.swap(akash);
+
+	//to push_back in the string
+	name.push_back('z');
+    cout<<"to push_back in the string="<<name<<endl;
+
+	//to pop_back in the string
+	name.pop_back();
+    cout<<"to pop_back in the string="<<name<<endl;
+
+//to find the capacity of string
+    cout<<"capacity of string="<<name.capacity()<<endl;                             //capacity of string is always greater than length OR size
+
+//to resize the string
+     name.resize(25);
+    cout<<"resize of the string="<<name.length()<<endl;
+
+//to to replace the character in string
+    cout<<"to to replace the character in string="<<name.replace(1,5,"k")<<endl;
+
+//to find the max size of string
+    cout<<"maximum size of string="<<name.max_size()<<endl;
+
+//to append in the string
+    cout<<"to append in the string="<<name.append("sggs collage of engeneering")<<endl;
+
+	//to insert the character in string
+    cout<<"to insert the character in string="<<name.insert(3,"sggs collage of engeneering")<<endl;
+	//to insert the character in string  take only number of character
+    cout<<"to insert the character in string  take only number of character="<<name.insert(3,"pppppppppppppppppppppp",10)<<endl;
+
+
+
+	//use of isempty()
+	if(name.empty())
+	{
+		cout<<"string os empty"<<endl;
+	}
+	else
+	{
+        cout<<"string is not empty="<<name<<endl;
+	}
+
+//to find the size of string
+            name.clear();
+    cout<<"clear the string="<<name<<endl;                        //it is same as the cleae()=====erase()
+	cout<<"erase the string="<<name.erase()<<endl;
+	cout<<name;
+
+
+
+ 	//cout<<"enter the string 2"<<endl;
+ 	//cin>>akash;           //  not read spaces
+ 	//cout << akash<<endl;
+     
+     //to convert the string to long
+//to convert the string to float    
+//float x=strtof(akash,NULL);
+  //  cout<<"to convert the string to float="<<x<<endl;
+
+	return 0;
+}
