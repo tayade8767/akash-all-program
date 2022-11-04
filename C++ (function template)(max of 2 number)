@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+template<class T>             //it create the templete for class to with class name T and function name (and their atributes)
+
+T akash(T a,T b)
+{
+    if(a>b)
+    {
+        return a;
+    }
+    else
+    {
+        return b;
+    }
+}
+int main()
+{
+    cout<<akash(10,20)<<endl;
+    cout<<akash(10.2f,30.4f)<<endl;
+    return 0;
+}
