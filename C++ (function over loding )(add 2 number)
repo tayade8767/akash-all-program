@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int add(int a,int b)
+{
+    return a+b;
+}
+int add(int a,int b,int c)
+{
+    return a+b+c;
+}
+int  main()
+{
+    int a=10,b=20,c=40;
+    cout<<"the addition of two number::"<<add(a,b)<<endl;
+    cout<<"the addition of three number::"<<add(a,b,c)<<endl;
+
+}
