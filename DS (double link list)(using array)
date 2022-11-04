@@ -1,0 +1,98 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    struct node *pre;
+    int data;
+    struct node *next;
+}*head;
+
+    struct node *last,*t;
+int i,len=0;
+
+void create(int a[],int n)
+{
+    head=(struct node *)malloc(sizeof(struct node));
+    printf("we get the first data\n");
+    head->data=a[0];
+    head->next=head->pre=NULL;
+    last=head;
+        for(i=1;i<n;i++)
+        {
+            t=(struct node *)malloc(sizeof(struct node));
+            t->data=a[i];
+            last->next=t;
+            t->pre=last;
+            last=t;
+        }
+}
+
+void displaynext()
+{
+    struct node *x=head;
+    while (x!=NULL)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+    printf("\n");
+}
+
+void displaypre()
+{
+    struct node *x=t;
+    while (x!=NULL)
+    {
+        printf("%d\t",x->data);
+        x=x->pre;
+    }
+    printf("\n");
+}
+
+void length()
+{
+    struct node *t=head;
+    while(t!=NULL)
+    {
+        len++;
+        t=t->next;
+    }
+    printf("length of the linklist::%d",len);
+}
+
+int main()
+{
+    int n;
+    int a[]={10,20,30,40,50,60,07,0,8};
+    while(1)
+    {
+        printf("enter 1 for enter linklist\n");
+        printf("enter 2 for display next\n");
+        printf("enter 3 for display pre\n");
+        scanf("%d",&n);
+            switch(n)
+            {
+                    case 1:
+                    {
+                        create(a,9);
+                        break;
+                    }
+                    case 2:
+                    {
+                        displaynext();
+                        break;
+                    }
+                    case 3:
+                    {
+                        displaypre();
+                        break;
+                    }
+                    case 4:
+                    {
+                        length();
+                        break;
+                    }
+            }
+    }
+
+}
