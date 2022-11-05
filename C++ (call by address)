@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+
+int *fun(int size)                                       //    total function return the p(p points the total array) 
+{
+    int *p=new int[size];
+    for(int i=0;i<size;i++)
+    {
+        p[i]=i+1;
+    }
+    return p;
+}
+
+int main()
+{
+    int *ptr=fun(5);                         //ptr points to the total function
+    while(*ptr!=NULL)
+    {
+        cout<<*ptr<<endl;
+        ptr++;
+    }
+    return(0);
+}
