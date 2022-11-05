@@ -1,0 +1,80 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node{
+int data;
+struct node *next;
+}*head;
+int pos=0,neg=0,odd=0,even=0;
+void create()
+{
+struct node *p=head;
+head=(struct node *)malloc(sizeof(struct node));
+printf("enter the data::");
+scanf("%d",&head->data);
+head->next=p;
+p=head;
+}
+void evenodd()
+{
+int odd=0 ,even=0;
+struct node *x=head;
+while(x!=null)
+{
+if(x->data%2==0)
+{
+even++ ;
+}else
+{
+odd++;
+}
+x=x->next;
+}
+printf("odd::%d",odd);
+printf("even::%d",even);
+}
+void posneg()
+{
+int odd=0 ,even=0;
+struct node *x=head;
+while(x!=null)
+{
+if(x->data>=0)
+{
+pos++;
+}else
+{
+neg++;
+}
+x=x->next;
+}
+printf("negative::%d",neg);
+printf("positive::%d",pos);
+}
+int main()
+{
+int n;
+while(1)
+{
+printf("enter 1 for create\n");
+printf("enter 2 for even or odd\n");
+printf("enter 3 for negative or positive\n");
+scanf("%d",&n);
+switch(n)
+{
+case 1:
+{
+create();
+break;
+}
+case 2:
+{
+evenodd();
+}
+case 3:
+{
+posneg();
+}
+}
+}
+}
