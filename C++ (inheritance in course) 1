@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+class base
+{
+    public:
+    int x;
+   void displaybase()
+    {
+        cout<<"value of x in base::"<<x<<endl;
+    }
+};
+
+class derived :public base
+{
+  public:
+  int y;
+  void displayderived()
+  {
+     cout<<"the value of y in derived::"<<y<<endl;
+  }  
+};
+
+int main()
+{
+    base b;
+    b.x=10;
+    b.displaybase();
+    derived d;
+    d.x=20;
+    d.y=30;
+    d.displaybase();
+    d.displayderived();
+    return(0);
+}
