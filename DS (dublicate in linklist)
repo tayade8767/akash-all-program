@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+    int data;
+    struct node *next;
+}*head;
+int length=0;
+void create(){
+    struct node *ptr=(struct node *)malloc(sizeof (struct node));
+    printf("enter the value::");
+    scanf("%d",&ptr->data);
+    ptr->next=head;
+    head=ptr;
+}
+
+void dublicate(){
+    struct node *x=head,*q,*p=head,*i=head,*o=head;
+    printf("before\n");
+    while(i!=NULL)
+    {
+        printf("%d\t",i->data);
+        i=i->next;
+    }
+   while(p!=NULL)
+   {
+       if(q->data!=p->data)
+       {
+       q=p;
+       p=p->next;
+       }else{
+           q->next=p->next;
+           printf("the value of dublicate::%d\n",p->data);
+           free(p);
+           p=q->next;}
+   }
+   printf("after\n");
+   struct node *l=head;
+    while(l!=NULL)
+    {
+        printf("%d\t",l->data);
+        l=l->next;
+    }
+    printf("\n");
+}
+int main(){
+    int n;
+    while(1){
+        printf("enter 1 for linklist\n");
+        printf("enter 2 for middle of linklist\n");
+        scanf("%d",&n);
+        switch(n){
+            case 1:{
+                create();
+                break;
+            }
+            case 2:{
+                dublicate();
+                break;
+}}}}
