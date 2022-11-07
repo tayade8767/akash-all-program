@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+    int data;
+    struct node *next;
+}*head;
+int length=0;
+void create(){
+    struct node *ptr=(struct node *)malloc(sizeof (struct node));
+    printf("enter the value::");
+    scanf("%d",&ptr->data);
+    ptr->next=head;
+    head=ptr;
+}
+
+void middle(){
+    struct node *x=head;
+    struct node *p=head;
+    while(x!=0){
+        length++;
+        x=x->next;
+    }
+  printf("lengty of linklist=%d\n",length);
+      if(length%2==0){
+            printf("no middle node in linklist\n");
+        }
+        else
+        {
+            for(int i=0;i<length/2;i++){
+                p=p->next;
+            }
+            printf("middle value of linklist=%d",p->data);
+        }
+}
+int main(){
+    int n;
+    while(1){
+        printf("enter 1 for linklist\n");
+        printf("enter 2 for middle of linklist\n");
+        scanf("%d",&n);
+        switch(n){
+            case 1:{
+                create();
+                break;
+            }
+            case 2:{
+                middle();
+                break;
+}}}}
