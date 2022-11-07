@@ -1,0 +1,73 @@
+#include<iostream>
+using namespace std;
+ 
+ class rectangle
+ {
+    private:
+    int length;
+    int breagth;
+     public :
+     rectangle(int l=0,int b=0)
+     {
+        length=l;
+        breagth=b;
+     }
+     void setlength(int l)
+     {
+        length=l;
+     }
+     void setbreath(int b)
+     {
+          breagth=b;
+     }
+     int getlength()
+     {
+        return length;
+     }
+     int getbreath()
+     {
+        return breagth;
+     }
+     int area()
+     {
+        return length*breagth;
+     }
+     int perimeter()
+     {
+        return 2*(length+breagth);
+     }
+ };
+ 
+ class cuboid:public rectangle
+ {
+   private:
+   int height;
+   public:
+   cuboid(int l=0,int b=0,int h=0)
+   {
+     height=h;
+     setlength(l);
+     setbreath(b);
+   }
+   int getheigth()
+   {
+      return height;
+   }
+   void setheight(int h)
+   {
+     height=h;
+   }
+   int volume()
+   {
+    return getlength()*getbreath()*height;
+   }
+ };
+
+ int main()
+ {
+    cuboid c(4,2,3);
+    cout<<c.getlength()<<endl;
+    cout<<c.getbreath()<<endl;
+    cout<<c.volume()<<endl;
+    cout<<c.area()<<endl;
+ }
