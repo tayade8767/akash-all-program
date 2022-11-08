@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class aditya
+{
+    public:
+ void   fun1()
+    {
+        cout<<"the aditya class"<<endl;
+    }
+};
+
+class akash:public aditya
+{
+    public :
+ void   fun2()
+    {
+        cout<<"the akash class"<<endl;
+    }
+};
+int main()
+{
+    akash t;
+    aditya *s=&t;
+    s->fun1();       // base class pointer points to the object of derived class
+   // s->fun2();    //but derived class pointer does not points to the base class 
+                     //  object
+}
