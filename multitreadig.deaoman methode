@@ -1,0 +1,25 @@
+class Pp extends Thread{
+    int a=0;
+    public void run(){
+        while(a!=4){
+        a++;
+        System.out.println("daemon thread work"+a);
+        
+    }
+}
+public static void main(String[] args){
+    Pp t1=new Pp();
+    Pp t2=new Pp();
+    Pp t3=new Pp();
+    t1.setDaemon(true);
+    t1.start();
+    t2.start();
+    t3.start();
+t1.setPriority(3);
+t2.setName("tejas");
+
+    System.out.println(t1.getPriority());
+     System.out.println(t2.getName());
+     //System.out.println(t1.getDaemon());
+}
+}
