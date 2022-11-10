@@ -1,0 +1,182 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node
+{
+     struct node *pre;
+     int data;
+     struct node *next;                          //structer is created with pre and next 
+}*head;
+int n,i,len=0,k;
+void create()
+{                                               //for creation of nodes
+    int m;
+    struct node *t,*last;
+    head=(struct node *)malloc(sizeof(struct node));
+    printf("enter the head value:::");
+    scanf("%d",&head->data);
+    head->next=head->pre=null;
+    last=head;
+    printf("enter the number you create a node::");
+    scanf("%d",&m);
+    len++;
+     for(i=1;i<=m;i++)
+     {
+        t=(struct node *)malloc(sizeof(struct node));
+        printf("enter the %d node data:::",i);
+        scanf("%d",&t->data);
+        last->next=t;
+        t->pre=last;
+        last=t;
+        len++;
+     }
+     printf("length of linkllist=%d\n",len);
+     t->next=null;
+}
+void displaynext()
+{
+    struct node *x=head;                          //display   double linklist in next
+    while(x!=null)
+    {
+        printf("%d\t",x->data);
+        x=x->next;
+    }
+}
+void displaypre()
+{
+    struct node *t,*l=head;
+    while(l->next!=null)
+    {
+        l=l->next;                                 // display pre link list
+    }
+    t=l;
+       while(t!=null)
+    {
+        printf("%d\t",t->data);
+        t=t->pre;
+    }
+
+}
+void insert()
+{
+    struct node *t=head,*temp,*p;
+    printf("enter the no.you want insert the node::");
+    temp=(struct node *)malloc(sizeof(struct node));                   //insert node at any position
+    scanf("%d",&n);
+    if(n==0)
+    {
+        printf("enter the value::");
+        scanf("%d",&temp->data);
+        temp->pre=null;
+        temp->next=head;
+        head->pre=temp;
+        head=temp;
+    }
+    else if(n==len)
+    {
+        while(t->next!=null)
+        {
+            t=t->next;
+        }
+        printf("enter the value::");
+        scanf("%d",&temp->data);
+        t->next=temp;
+        temp->pre=t;
+        temp->next=null;
+    }
+    else
+    {
+        for(i=1;i<n;i++)
+        {
+            t=t->next;
+        }
+        p=t->next;
+        printf("enter the value::");
+        scanf("%d",&temp->data);
+        temp->next=p;
+        temp->pre=t;
+        t->next=temp;
+        p->pre=temp;
+    }
+    len++;
+}
+void delete()
+{
+    struct node *t=head,*p=head,*q=null,*r=null;
+
+    printf("enter the no.you want to delete::");                  //it is for delete nodesin linklist
+    scanf("%d",&k);
+    if(k==0)
+    {
+        printf("value of deleted node::%d",t->data);
+        head=head->next;
+        free(t);
+        head->pre=null;
+    }
+    else if(k==len)
+    {
+        while(t->next!=null)
+        {
+            t=t->next;
+        }
+     printf("value of deleted node::%d",t->data);
+     r=t->pre;
+     r->next=null;
+     free(t);
+    }
+    else 
+    {
+        for(i=1;i<=n;i++)
+        {
+            r=q;
+            q=p;
+            p=p->next;
+        }
+        r->next=p;
+        p->pre=r;
+        printf("value of deleted node::%d",q->data);
+        free(q);
+    }
+    len--;
+}
+int main()
+{
+    int num;
+      while(1)
+    {
+    printf("\nenter 1 for create double linklist\n");
+    printf("enter 2 for display next of double\n");
+    printf("enter 3 for dispaly pre\n");
+    printf("enter 4 for insert node at position\n");
+    printf("enter 5 for delete the node\n");
+    scanf("%d",&num);
+    switch (num)
+    {
+            case 1:
+            {
+                create();
+                break;
+            }
+            case 2:
+            {
+                displaynext();
+                break;
+            }
+            case 3:
+            {
+                displaypre();
+                break;
+            }
+            case 4:
+            {
+                insert();
+                break;
+            }
+            case 5:
+            {
+                delete();
+                break;
+            }
+    }
+    }
+}
