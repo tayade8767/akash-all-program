@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+class shape
+{                                                         //parent class
+    public:
+    virtual void draw()
+    {
+        cout<<"drawing...."<<endl;
+    }
+};
+class rectangle:public shape                          //child class inherite from parent class 
+{
+  public:
+  void draw()
+  {
+      cout<<"drawing rectangle...."<<endl;
+  }
+};
+class circle:public shape                                      //child class inherite from parent class 
+{
+  public:
+  void draw()
+  {
+      cout<<"drawing circle...."<<endl;
+  }
+};
+int main()
+{
+    shape *s;                                                 //base class pointer
+    shape sh;                                                  //base class boject
+    rectangle re;
+    circle c;
+s=&sh;                                                      //base class pointer dereference to the object of class
+    s->draw();
+s=&re;
+    s->draw();
+s=&c;
+    s->draw();
+}
