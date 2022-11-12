@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+class akash
+{
+  public:
+  string colour="pink...";
+};
+class pk:public akash
+{
+  public:
+  string colour="red...";
+};
+int main()
+{
+    akash y=pk();
+    cout<<y.colour;
+}
