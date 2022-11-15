@@ -1,0 +1,46 @@
+#include<stdio.h>
+int a[10],n,count=0,mid,i,j,key;
+int main()
+{
+     printf("enter the no array::");
+     scanf("%d",&j);
+     int no;
+     for(i=0;i<j;i++)
+     {
+         printf("enter %d array::",i);
+         scanf("%d",&a[i]);
+         
+     }
+    printf("array elemnt");
+
+     for(i=0;i<j;i++)
+     {
+         printf("\n %d",a[i]);
+     }
+     printf("\nenter key::");
+     scanf("%d",&key);
+     for(i=0;i<=j;i++)
+     {
+         mid=(i+j)/2;
+         if(a[mid]==key)
+         {
+             count++;
+             break;
+         }
+        if(key<a[mid])
+         {
+             j=mid-1;
+         }
+         if(key>a[mid])
+         {
+             i=mid+1;
+         }
+     }
+     if(count==0)
+     {
+         printf("element is not found\n");
+     }
+     else{
+         printf("element found\n");
+     }
+}
