@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+class akash
+{
+  public:
+  virtual void fun1()=0;
+  virtual void fun2()=0;
+};
+class pk
+{
+  public:
+  void fun1()
+  {
+      cout<<"derived class fun1"<<endl;
+  }
+  void fun2()
+  {
+      cout<<"derived class fun2";
+  }
+};
+int main()
+{
+   //akash a;                                not craete object of abstract class
+   pk a;
+    a.fun1();
+}
