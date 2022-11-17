@@ -1,0 +1,133 @@
+#include<stdio.h>
+int n,j;
+struct node 
+{
+    struct node *pre;
+    int data;
+    struct node *next;
+}*head,*i;
+void create()
+{
+    struct node *t,*last;
+    head=(struct node *)malloc(sizeof(struct node));
+    printf("enter the head value::");
+    scanf("%d",&head->data);
+    head->pre=head->next=NULL;
+    last=head;
+    printf("enter the number of nodes::");
+    scanf("%d",&n);
+    for(j=0;j<n;j++)
+    {
+        t=(struct node *)malloc(sizeof(struct node));
+        printf("enter %d value::",i);
+        scanf("%d",&t->data);
+        last->next=t;
+        t->pre=last;
+        last=t;
+    }
+    t->next=NULL;
+}
+void displaynext()
+{
+    struct node *m=head;
+    while(m!=NULL)
+    {
+        printf("%d\t",m->data);
+        m=m->next;
+    }
+}
+void displaypre()
+{
+    struct node *m=head,*x;
+    while(m->next!=NULL)
+    {
+        m=m->next;
+    }
+    while(m!=NULL)
+    {
+        printf("%d\t",m->data);
+        m=m->pre;
+    }
+}
+
+void circular_to_double()
+{
+    i=head;
+    while(i->next!=NULL)
+    {
+        i=i->next;
+    }
+    i->next=head;
+    head->pre=i;
+}
+
+void Displaynextcircular_to_double()
+{
+    struct node *o=head;
+    printf("display of cricualr link  list\n");
+    do
+    {
+        printf("%d\t",o->data);
+        o=o->next;
+    }while(o!=head);
+
+}
+
+void Displayprecircular_to_double()
+{
+    struct node *o=i;
+    printf("display of cricualr link  list\n");
+    do
+    {
+        printf("%d\t",o->data);
+        o=o->pre;
+    }while(o!=i);
+
+}
+
+int main()
+{
+    while(1)
+    {
+    printf("enter 1 for create doubly linklist\n");
+    printf("enter 2 for print next\n");
+    printf("enter 3 for print pre\n");
+    printf("enter 4 for circulardouble linklist\n");
+    printf("enter 5 for print circulardoublenext\n");
+   printf("enter 6 for print circulardoublepre\n");;
+    scanf("%d",&n);
+    switch (n)
+    {
+        case 1:
+        {
+        create();
+        break;
+        }
+        case 2:
+        {
+        displaynext();
+        break;
+        }
+        case 3:
+        {
+        displaypre();
+        break;
+        }
+        case 4:
+        {
+            circular_to_double();
+            break;
+        }
+        case 5:
+        {
+            Displaynextcircular_to_double();
+            break;
+        }
+        case 6:
+        {
+            Displayprecircular_to_double();
+            break;
+        }
+    }
+}
+}
