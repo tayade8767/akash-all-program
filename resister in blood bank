@@ -1,0 +1,26 @@
+#include<stdio.h>
+int name[20][20],address[40][40],age[20],blood[4][4],i,j,n;
+void main(){
+    printf("enter the number of blood doner::");
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        printf("enter the the data of %d\n",i);
+        printf("enter the name of person::");
+        scanf("%s",&name[i]);
+        printf("enter the address of person::");
+        scanf("%s",&address[i]);
+        printf("enter the age of person::");
+        scanf("%d",&age[i]);
+        printf("enter the blood type of person::");
+        scanf("%s",&blood[i]);
+    }
+    for(i=0;i<n;i++){
+        if(age[i]>=25){
+        printf("The person number=%d\n",i);
+        printf("NAME::%s\n",name[i]);
+        printf("ADDRESS::%s\n",address[i]);
+        printf("AGE::%d\n",age[i]);
+        printf("BLOOD::%s\n",blood[i]);
+        }
+    }
+}
