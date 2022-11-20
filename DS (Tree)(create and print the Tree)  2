@@ -1,0 +1,79 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+
+struct node 
+{
+     struct node *left;            //we define the structure of the left and right for create the and the tree
+     int data;
+     struct node *right;
+}*root;
+                           //define the n to global to give axcess from any place
+int n;
+
+void create()      //define the function for the create the tree  
+{
+    struct node *newnode1,*newnode2;
+    root=(struct node*)malloc(sizeof(struct node));
+    printf("enter the root value\n");
+    scanf("%d",&root->data);
+    //we create the node to left of linklist
+    printf("GOING TO LEFT OF TREE");
+    printf("\n");
+    newnode1=(struct node *)malloc(sizeof(struct node));
+    printf("entre the left value of TREE\n");
+    scanf("%d",&newnode1->data);
+    root->left=newnode1;
+    newnode1->right=newnode1->left=null;
+    //we create the node to right of linklist
+    printf("\n");
+    printf("GOING TO RIGHT OF TREE\n");
+    printf("entre the vlaue of TREE\n");
+    newnode2=(struct node *)malloc(sizeof(struct node));
+    scanf("%d",&newnode2->data);
+    root->right=newnode2;
+    newnode2->left=newnode2->right=null;
+}
+void display()                                                       //display function is define for the display right and left of linklist
+{
+    struct node *x=root;
+    printf("left value of tree\n");
+    while(x!=null)
+    {
+        printf("%d\n",x->data);
+        x=x->left;
+    }
+    printf("\nright value of tree\n");
+    struct node *t=root;
+    while(t!=null)
+    {
+        printf("%d\n",t->data);
+        t=t->right;
+    }
+}
+
+int main()                  // main program starts
+{
+    while(1)
+    {
+        printf("entre 1 for create TREE\n");
+        printf("enter 2 for display\n");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+              {
+                  create();
+                  break;
+              }
+            case 2:
+              {
+                  display();
+                  break;
+              }
+        }
+
+    }
+    return(0);
+}
