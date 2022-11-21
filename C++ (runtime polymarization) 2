@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+class ak
+{
+     public:
+     void akash()
+     {
+         cout<<"BASE CLASS CAN BE ACHIEVED"<<endl;
+     }
+};
+class pk:public ak                                                //base class can be axcess publicay
+{
+     public:
+    void akash()
+    {
+        cout<<"DERIVED CLASS CAN BE ACHIEVED"<<endl;
+    }
+};
+
+int main()
+{
+    pk a=pk();                  //  It derived class object assign to the derived class function
+    a.akash();
+}
