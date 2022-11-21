@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+class akash
+{
+    private:
+      int a,m;
+    public:
+   // akash(){}                            //declare the constructor   
+     akash(int i)
+     {
+        a=i;
+     }
+    void operator+(akash l)
+    {
+        m=a+l.a;
+      cout<<"THE ADDITION OF TWO OBJECTS::::"<<m;
+    }
+};
+
+// void akash::operator+(akash l)                                   //to declare the operator overloding outside
+// {
+//      m=a+l.a;
+//      cout<<"THE ADDITION OF TWO OBJECTS::::"<<m;
+// }
+
+int main()
+{
+    akash a1(10);
+    akash a2(20);
+    a1+a2;
+}
