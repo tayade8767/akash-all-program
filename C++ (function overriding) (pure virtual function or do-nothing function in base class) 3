@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+
+class akash
+{
+  public:
+  virtual void display()=0;                        //pure virtual function (or) do-nothing function
+                                                  //we can not create the object of pure class but pointer to the base class can be created
+                                                 //virtual keyword are use (virtual means domy of display)
+};
+
+class pk:public akash
+{
+  private:
+  int y=123;
+  public:
+  void display()
+   {
+       cout<<"the vaue of y="<<y<<endl;
+   }
+};
+
+int main()
+{
+     akash *a;                       //we can create the base class pointer (when it is pure virtual or do-nothing function)
+     
+    // akash e;                    //we can not create the objects of base class                
+   //  a=&e;                      //base class pointer points the base class object
+   // a->display();
+     
+     pk p;                     //derived class object
+     a=&p;                    //base class pointer points to the derived class object
+     a->display();           //it is points to the derived class function
+}                           //so we use the virtual keyword in base class for the function
