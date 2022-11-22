@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+class akash
+{
+  private:
+  int x=10;
+  public:
+  virtual void display()                                   //virtual keyword are use (virtual means domy of display)
+   {
+       cout<<"the vaue of x="<<x<<endl;
+   }
+};
+
+class pk:public akash
+{
+  private:
+  int y=123;
+  public:
+  void display()
+   {
+       cout<<"the vaue of y="<<y<<endl;
+   }
+};
+
+int main()
+{
+     akash *a;                            //base class pointer
+     
+     akash e;                          //base class object
+     a=&e;                            //base class pointer points the base class object
+     a->display();
+     
+     pk p;                         //derived class object
+     a=&p;                        //base class pointer points to the derived class object
+     a->display();               //it is points to the derived class function
+}                               //so we use the virtual keyword in base class for the function
