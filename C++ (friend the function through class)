@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+class akash
+{
+   public:
+   int a=10,b=123,c=13451342;
+   friend void fun();                              //we can create the friend the function to class
+};
+   void fun()
+   {
+       akash p;
+       cout<<p.a<<endl;
+       cout<<p.b<<endl;
+       cout<<p.c<<endl;
+   }
+int main()
+{
+    fun();
+}
