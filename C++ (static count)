@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+class akash
+{
+   public:
+   static int count;
+   akash()
+   {
+       count++;
+   cout<<"the value of count="<<count<<endl;
+   }
+};
+
+int akash::count=0;                                    // we create the static count as 0
+int main()
+{
+    akash a1,a2,a3,a4;
+    
+}
