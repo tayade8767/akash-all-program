@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+class ak
+{
+    public:
+    string name;
+    int no;
+   static int addno;
+    ak(string n)
+    {
+        addno++;
+        no=addno;
+        name=n;
+    }
+};
+int ak::addno=0;
+int main()
+{
+    ak a1("akash");
+    ak a2("tejas");
+    ak a3("punamchand");
+    ak a4("sushant");
+    cout<<a2.name<<"  "<<a2.no<<endl;
+    cout<<"number of admission in collage="<<ak::addno;
+}
