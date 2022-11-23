@@ -1,0 +1,23 @@
+#include<stdio.h>
+int n,n1,n2,t,r1,r2,count=0,l;
+int senquence(int n){
+    if(n==0){
+        return(0);
+    }
+    else{   
+        r1=n%10;
+        n1=n/10;
+        r2=n1%10;
+        if(r1==r2){
+            l=r1;
+             count++;
+        }
+        senquence(n1);
+    }
+    return count;
+}
+void main(){
+    printf("enter the number::");
+    scanf("%d",&n);
+   printf("%d will dectected %d times",l,senquence(n));
+}
