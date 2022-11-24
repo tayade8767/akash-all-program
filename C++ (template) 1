@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+
+template<class t>
+     t display(t x,t y)
+     {                                  
+         if(x>y)
+        {
+            return x;
+        }
+        else 
+        {
+        return y; 
+        }
+     }
+int main()
+{
+    cout<<"the maximum value="<<display(12,34);
+}
