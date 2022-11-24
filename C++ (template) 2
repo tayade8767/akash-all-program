@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+template<class t,class r>
+int display(t x,r y)
+{
+    return x+y;
+}
+int main()
+{
+    cout<<"the value="<<display(12,23.23);
+}
