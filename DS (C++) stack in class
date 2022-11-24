@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+class stack
+{
+    int top;
+    int size;
+    int *a;
+    public:
+     stack(int sz)
+     {
+        size=sz;
+        top=-1;
+        a=new int[size];              //we create the array danamically
+     }
+    void pop();
+    void push(int x);
+};
+void stack::push(int x)
+{
+    if(top==size-1)
+    {
+        cout<<"it is full"<<endl;
+    }
+    else
+    {
+    top++;
+    a[top]=x;
+    }
+}
+void stack::pop()
+{
+    
+    if(top==-1)
+    {
+        cout<<"it is null"<<endl;
+    }
+    else
+    {
+        cout<<a[top]<<endl;
+    top--;
+    }
+}
+int main()
+{
+    stack d(10);
+    d.push(12);
+    d.push(20);
+    d.pop();
+    d.pop();
+    d.pop();
+}
