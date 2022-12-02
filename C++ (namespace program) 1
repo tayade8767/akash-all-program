@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+namespace first
+{
+    void sayhello()
+    {
+        cout<<"HELLO FROM FIRST NAMESPACE"<<endl;
+    }
+}
+namespace second
+{
+    void sayhello()
+    {
+        cout<<"HELLO FROM SECOND NAMESPACE"<<endl;
+    }
+}
+int main()
+{
+    first::sayhello();
+    second::sayhello();
+}
