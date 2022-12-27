@@ -1,0 +1,76 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node 
+{
+    struct node *left;
+    int data;
+    struct node *right;
+};
+
+struct node *create()
+{
+    int value,x;
+    struct node *temp;
+    temp=(struct node *)malloc(sizeof(struct node));
+    printf("\nenter 0 for exit or NO node\n");
+    scanf("%d",&x);
+    if(x==0)
+    {
+        return 0;
+    }
+    printf("enter the value\n");
+    scanf("%d",&value);
+    temp->data=value;
+    printf("\nenter the left child of %d ",value);
+    temp->left=create();
+    printf("\nenter the right child of %d ",value);
+    temp->right=create();
+    return temp;
+}
+
+void pre(struct node *p)
+{
+    if(p==NULL)
+    {
+        return ;
+    }
+    printf("%d,",p->data);
+    pre(p->left);
+    pre(p->right);
+}
+
+void in(struct node *q)
+{
+    if(q==NULL)
+    {
+        return ;
+    }
+    in(q->left);
+    printf("%d,",q->data);
+    in(q->right);
+}
+
+
+void post(struct node *r)
+{
+    if(r==NULL)
+    {
+        return ;
+    }
+    post(r->left);
+    post(r->right);
+    printf("%d,",r->data);
+}
+
+int main()
+{
+    struct node *root;
+    root=create();
+    printf("\nwe can created the tree \n");
+    printf("preorder of the tree::");
+    pre(root);
+    printf("\ninorder of the tree::");
+    in(root);
+    printf("\npostorder of the tree::");
+    post(root);
+}
