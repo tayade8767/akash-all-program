@@ -1,0 +1,26 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    ifstream infile;
+    infile.open("akash.txt");                                        //  reading the file from the program
+    if(infile)
+    {
+        cout<<"opening the file"<<endl;
+    }
+    string str1;
+    string str2;
+    int age;
+    infile>>str1;
+    infile>>str2;
+    infile>>age;
+    cout<<str1<<endl;
+    cout<<str2<<endl;
+    cout<<age<<endl;
+    if(infile.eof())
+    {
+        cout<<"file is ending now "<<endl;
+    }
+    infile.close();
+}
