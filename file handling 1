@@ -1,0 +1,19 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    ofstream outfile("akash.txt",ios::trunc);                                      //    writting the file 
+    if(outfile)
+    {
+        cout<<"file is open you can write the file"<<endl;
+    }
+    outfile<<"hello akash"<<endl;
+    outfile<<"hi am learning in the 2nd year"<<endl;
+    outfile<<20<<endl;
+    outfile.close();
+    if(outfile.eof())
+    {
+        cout<<"this is the end of file"<<endl;
+    }
+}
