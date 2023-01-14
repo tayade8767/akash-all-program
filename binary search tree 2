@@ -1,0 +1,183 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node 
+{
+    struct node *left;
+    int data;
+    struct node *right;
+};
+struct node *create(struct node *p,int key)
+{
+    struct node *t;
+    if(p==NULL)
+    {
+        t=(struct node *)malloc(sizeof(struct node));
+        t->data=key;
+        t->left=NULL;
+        t->right=NULL;
+        return t;
+    }
+    else if(key<p->data)
+    {
+        p->left=create(p->left,key);
+    }
+    else
+    {
+        p->right=create(p->right,key);
+    }
+    return p;
+}
+
+void pre(struct node *p)
+{
+    if(p==NULL)
+    {
+        return ;
+    }
+    printf("%d,",p->data);
+    pre(p->left);
+    pre(p->right);
+}
+
+void in(struct node *p)
+{
+    if(p==NULL)
+    {
+        return ;
+    }
+    in(p->left);
+    printf("%d,",p->data);
+    in(p->right);
+}
+
+void post(struct node *p)
+{
+    if(p==NULL)
+    {
+        return ;
+    }
+    post(p->left);
+    post(p->right);
+    printf("%d,",p->data);
+}
+
+void recsearch(struct node *p,int value)   // searching in binary search tree using the recursion
+{
+    if(p==NULL)
+    {
+        printf("element is not found\n");
+        return ;
+    }
+    if(p->data==value)
+    {
+        printf("found the element\n");
+        return ;
+    }
+    if(value<p->data)
+    {
+        recsearch(p->left,value);
+    }
+    if(value>p->data)
+    {
+        recsearch(p->right,value);
+    }
+}
+
+void itsearch(struct node *p)  // it is for the iterative binary search
+{
+    printf("enter value::");
+    int value;
+    scanf("%d",&value);
+    while(p!=NULL)
+    {
+        if(p->data==value)
+        {
+            printf("element is found");
+            return ;
+        }
+        if(value<p->data)
+        {
+            p=p->left;
+        }
+        if(value>p->data)
+        {
+            p=p->right;
+        }
+        if((p->left==NULL || p->right==NULL))
+        {
+            printf("elenunt is not found");
+            return ;
+        }
+    }
+}
+
+void insert(struct node *x)                                           //  inserting in the binary tree
+{
+    printf("akakshshshshshshhshshshshs\n");
+    struct node *temp,*r=NULL;
+    int value;
+    printf("enter the value for inserting::");
+    scanf("%d",&value);
+    while(x!=NULL)
+    {
+        r=x;
+        if(value==x->data)
+        {
+            return ;
+        }
+       else if(value<x->data)
+        {
+            x=x->left;
+        }
+        else
+        {
+            x=x->right;
+        }
+    }
+    printf("akakshshshshshshhshshshshs\n");
+    temp=(struct node *)malloc(sizeof(struct node));
+    temp->data=value;
+    temp->left=temp->right=NULL;
+    
+    if(temp->data < r->data)
+    {
+        r->left=temp;
+    }
+    else
+    {
+        r->right=temp;
+    }
+    
+}
+
+int main()
+{
+    printf("we are creating the binary search tree\n");
+    struct node *root;
+    root=create(root,20);
+    create(root,34);
+    create(root,4);
+    create(root,14);
+    create(root,44);
+    create(root,41);
+    create(root,23);
+    create(root,19);
+    printf("\npreorder of the binaey search tree::");
+    pre(root);
+    printf("\ninorder of the binaey search tree::");
+    in(root);
+    printf("\npostorder of the binaey search tree::");
+    post(root);
+    printf("\n\nsearching the binary search in recursive manner");
+    printf("\nenter the value for search::");
+    int value;
+    scanf("%d",&value);
+    recsearch(root,value);
+    printf("\nsearching the binary search in iterative manner\n");
+    itsearch(root);
+    printf("\n\ninserting in the binary search tree\n");
+    insert(root);
+    printf("\ninorder of the binaey search tree::");
+    in(root);
+}
