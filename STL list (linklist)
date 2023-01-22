@@ -1,0 +1,20 @@
+#include<iostream>
+#include<list>
+using namespace std;
+int main()
+{
+    list<int> v;
+    v.push_back(12);
+    v.push_back(34);
+    v.push_back(23);
+    for(int x:v)
+    {
+        cout<<x<<endl;
+    }
+    v.pop_front();
+    v.pop_back();
+    for(int x:v)
+    {
+        cout<<x<<endl;
+    }
+}
