@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+//   syntax
+
+//  storing variable= [capture_list](parameter_list) return-type  {  body  }(parameter);
+
+
+
+
+
+int main()
+{
+    int s=[](int x,int y)
+    {
+        return x+y;
+    }(5,3);
+    cout<<s<<endl;
+    
+    int a=10,b=23;
+    [a,b]()
+    {
+        cout<<a+b<<endl;
+    }();
+    
+    []()
+    {
+        cout<<"hello Akash"<<endl;
+    }();
+}
