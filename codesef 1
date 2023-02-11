@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t,a,b,c,d;
+	cin>>t;
+	while(t--)
+	{
+	    cin>>a>>b>>c>>d;
+	    int x=(a>b)?a:b;
+	    cout<<x<<endl;
+	    int y=(c>d)?c:d;
+	    cout<<y<<endl<<endl<<endl;;
+	    cout<<(x+y)<<endl;
+	}
+	return 0;
+}
