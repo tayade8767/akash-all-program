@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int t,a,b,y,x;
+	cin>>t;
+	while(t--)
+	{
+	    cin>>a>>b;
+	    x=(a>b)?a:b;
+	    while(1)
+	    {
+	        if(x%a==0&&x%b==0)
+	        {
+	            y=x;
+	           break;
+	        }
+	        x++;
+	    }
+	    cout<<(a*b)/y<<" ";
+	    cout<<y<<endl;
+	}
+	return 0;
+}
