@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    struct node *left;
+    int data;
+    struct node *right;
+}*root;
+int x;
+struct node *BST()    //struct node *p,int value
+{
+     struct node *temp;
+     temp=(struct node*)malloc(sizeof(struct node));
+     printf("\nenter 1 for new node\n");
+     printf("enter 0 for NO node\n");
+     scanf("%d",&x);
+     if(x==0)
+     {
+         return 0;
+     }
+     printf("\nenter the node value::");
+     scanf("%d",&temp->data);
+     printf("enter left child of %d",temp->data);
+     temp->left=BST();
+     printf("enter right child of %d",temp->data);
+     temp->right=BST();
+     return temp;
+}
+int main()
+{
+    printf("\n\n we are creating the tree\n\n");
+    struct node *root;
+    root=BST();
+    printf("tree is created succesfully");
+}
