@@ -1,0 +1,16 @@
+interface Principle
+{
+    void run();
+}
+public class Akash implements Principle
+{
+   public void run()
+    {
+        System.out.println("akash implements Principle interface");
+    }
+    public static void main(String args[])
+    {
+        Akash a=new Akash();
+        a.run();
+    }
+}
