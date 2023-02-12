@@ -1,0 +1,16 @@
+interface Principle                                                      //   achieved abstraction using the interface
+{
+    void run();  //internal addition of the compiler ////   id can add the public abstract before the method void run then the method becomes /*public abstract void run()*/
+}
+public class Akash implements Principle                                              //  class Akash inplements the class Principle
+{
+   public void run()
+    {
+        System.out.println("akash implements Principle interface");
+    }
+    public static void main(String args[])
+    {
+        Akash a=new Akash();                                         //  craeting the object of the Akash class
+        a.run();                                               //  calling to the run method in Akash method
+    }
+}
