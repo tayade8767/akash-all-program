@@ -1,0 +1,104 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node
+{
+    struct node *left;
+    int data;
+    struct node *right;
+};
+int x;
+struct node *BST(struct node *p,int value)    
+  {
+     struct node *temp;
+     if(p==NULL)
+     {
+     temp=(struct node*)malloc(sizeof(struct node));
+     temp->data=value;
+     temp->left=temp->right=NULL;
+     return temp;
+     }
+     if(value<p->data)
+     {
+         p->left=BST(p->left,value);
+     }
+     if(value>p->data)
+     {
+         p->right=BST(p->right,value);
+     }
+     return p;
+}
+
+void in(struct node *p)
+{
+    if(p==NULL)
+    {
+        return ;
+    }
+    in(p->left);
+    printf("%d,",p->data);
+     in(p->right);
+}
+void itsearch(struct node *p,int key)
+{
+    while(p!=NULL)
+    {
+        if(key==p->data)
+        {
+            printf("%d is found itration",key);
+            break;
+        }
+        else if(key<p->data)
+        {
+            p=p->left;
+        }
+        else if(key>p->data)
+        {
+            p=p->right;
+        }
+    }
+    if(p==null)
+    {
+        printf("%d is not found itrection",key);
+    }
+}
+
+void research(struct node *p,int key)
+{
+    if(p->left==NULL && p->right==NULL)
+    {
+        printf("\n%d is not found recursion",key);
+    }
+    if(key==p->data)
+    {
+        printf("\n%d is found in recersion",key);
+        return ;
+    }
+    else if(key<p->data)
+    {
+        research(p->left,key);
+    }else
+    {
+        research(p->right,key);
+    }
+}
+
+int main()
+{
+    int x;
+    printf("\n\n we are creating the tree\n\n");
+    struct node *root;
+    root=BST(root,12);
+    BST(root,2);
+    BST(root,119);
+    BST(root,13);
+    BST(root,9);
+    BST(root,31);
+    printf("tree is created succesfully");
+    printf("\n\npreorder of the tree::");
+    in(root);
+    printf("\n\niterative searching in binary tree\n\n");
+    scanf("%d",&x);
+    itsearch(root,x);
+    research(root,x);
+}
