@@ -1,0 +1,131 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+
+struct node
+{
+    struct node *next;
+    int data;
+}*head;
+
+
+
+
+void Create()
+{
+    struct node *t=head;
+    head=(struct node *)malloc(sizeof(struct node));
+    printf("enter the value::");
+    scanf("%d",&head->data);
+    head->next=t;
+    t=head;
+}
+
+void Display(struct node *p)
+{
+  // struct node *p=head;
+    while(p!=NULL)
+    {
+        printf("%d,",p->data);
+        p=p->next;
+    }
+}
+
+void Insert()
+{
+    int n;
+    printf("enter the position for insertion\n");
+    scanf("%d",&n);
+    if(n==0)
+    {
+        struct node *t=(struct node *)malloc(sizeof(struct node));
+        printf("enter the head value::");
+        scanf("%d",&t->data);
+        t->next=head;
+        head=t;
+    }
+    else
+    {
+        struct node *p=head;
+        for(int i=0;i<n-1;i++)
+        {
+            p=p->next;
+        }
+         struct node *t=(struct node *)malloc(sizeof(struct node));
+        printf("enter the node value of pos of %d ::",n);
+        scanf("%d",&t->data);
+        t->next=p->next;
+        p->next=t;
+    }
+}
+
+void Delete()
+{
+    int x;
+    printf("enter the position for delection\n");
+    scanf("%d",&x);
+    if(x==0)
+    {
+        struct node *t=head;
+        printf("delete value::",head->data);
+        head=head->next;
+        free(t);
+    }
+    else
+    {
+        struct node *p=head,*q=NULL;
+        for(int i=0;i<x-1;i++)
+        {
+            q=p;
+            p=p->next;
+        }
+         printf("%d",p->data);
+         q->next=p->next;
+         free(p);
+         p=q->next;
+
+        //  struct node *t=(struct node *)malloc(sizeof(struct node));
+        // printf("enter the node value of pos of %d ::",n);
+        // scanf("%d",&t->data);
+        // t->next=p->next;
+        // p->next=t;
+    }
+}
+
+int main()
+{
+    printf("\n\nwe are creating inklist\n\n");
+    int n;
+    while(1)
+    {
+        printf("enter 1 for create linklist\n");
+        printf("enter 2 for display linklist\n");
+        printf("enter 3 for insert linklist\n");
+        printf("enter 4 for delete linklist\n");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1:
+            {
+                Create();
+                break;
+            }
+            case 2:
+            {
+                Display(head);
+                break;
+            }
+            case 3:
+            {
+                Insert();
+                break;
+            }
+            case 4:
+            {
+                Delete();
+                break;
+            }
+        }
+    }
+    return 0;
+}
