@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n,i,k,j,x,count=0;
+	    cin>>n;
+	    int a[n],b[n];
+	     for(x=0;x<n;x++)
+	    {
+	        cin>>a[x];
+	    }
+	     for( x=0;x<n;x++)
+	    {
+	        cin>>b[x];
+	    }
+	    
+	     for( x=0;x<n;x++)
+	    {
+	        if(a[x]!=b[x])
+	        {
+	            break;
+	        }
+	    }
+	    i=x;
+	    j=x+1;
+	    k=x+2;
+	    
+	    int v=a[i]|a[j]|a[k];
+	    
+	    
+	    
+	     for( x=i;x<n;x++)
+	    {
+	        if(v!=a[x])
+	        {
+	            a[x]=v;
+	        }
+	    }
+	    
+	  for( x=0;x<n;x++)
+	    {
+	        if(a[x]==b[x])
+	        {
+	            count++;
+	        }
+	    }
+	    
+	  
+	    
+	    if(count==n)
+	    {
+	        cout<<"YES"<<endl;
+	    }
+	    else
+	    {
+	        cout<<"NO"<<endl;
+	    }
+	    
+	    
+	}
+	return 0;
+}
