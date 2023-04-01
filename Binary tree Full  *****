@@ -1,0 +1,120 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node 
+{
+    struct node *left;
+    int data;
+    struct node *right;
+};
+
+struct node *create()                                                           // creating the binary tree
+{
+    int n,x;
+     struct node *root=(struct node *)malloc(sizeof(struct node));
+      printf("\nEnter the 0 for no Node\n");
+      printf("\nEnter the 1 for the Node\n");
+      scanf("%d",&n);
+      if(n==0)
+      {
+        return ;
+      }
+
+       printf("Enter the Node data::");
+      scanf("%d",&x);
+      root->data=x;
+
+      printf("\nEnter the left child of %d::",x);
+      root->left=create();
+
+      printf("\nEnter the Right child of %d::",x);
+      root->right=create();
+
+      return root;
+}
+
+void Pre(struct node *t)
+{
+    if(t==NULL)
+    {
+        return ;
+    }
+    printf("%d,",t->data);
+    Pre(t->left);
+    Pre(t->right);
+}
+void In(struct node *t)
+{
+    if(t==NULL)
+    {
+        return ;
+    }
+    In(t->left);
+    printf("%d,",t->data);
+    In(t->right);
+}
+void Post(struct node *t)
+{
+    if(t==NULL)
+    {
+        return ;
+    }
+    Post(t->left);
+    Post(t->right);
+    printf("%d,",t->data);
+}
+
+int Countnode(struct node *p)
+{
+     if(p==NULL)
+     {
+         return 0;    
+     }
+        return 1+Countnode(p->left)+Countnode(p->right);  
+}
+
+int CountHeight(struct node *p)
+{
+     if(p==NULL)
+     {
+         return 0;    
+     }
+        int x=CountHeight(p->left);
+        int y=CountHeight(p->right); 
+        if(x>y)
+        {
+            return x+1;
+        } 
+        else{
+            return y+1;
+        }
+}
+
+int CountSum(struct node *p)
+{
+     if(p==NULL)
+     {
+         return 0;    
+     }  
+        return (p->data+CountSum(p->left)+CountSum(p->right));
+}
+
+
+int main()
+{
+    struct node *root;
+     root=create();
+    printf("\nBinary tree is created\n");
+    printf("\nPre order of the tree::");
+    Pre(root);
+    printf("\nIN order of the tree::");
+    In(root);
+    printf("\nPost order of the tree::");
+    Post(root);
+
+    printf("\nTotal number Nodes of the tree::%d",Countnode(root));
+    printf("\nHeight of the tree::%d",CountHeight(root));
+    printf("\nSum of the Binary Tree::%d",CountSum(root));
+
+    return 0;
+}
