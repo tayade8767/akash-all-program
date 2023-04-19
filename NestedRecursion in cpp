@@ -1,0 +1,19 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int NestedRecursion(int n)
+{
+    if(n>100)
+    {
+        return n-10;
+    }
+            return  NestedRecursion(NestedRecursion(n+11));                                 //it is Nested recursion in which inner calling is use
+}
+int main()
+{
+    int n;
+    cout<<"Enter the number"<<endl;
+    cin>>n;
+    cout<<NestedRecursion(n)<<" ";
+}
