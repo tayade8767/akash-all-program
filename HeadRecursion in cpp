@@ -1,0 +1,18 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+void HeadRecursion(int n)
+{
+    if(n>0)
+    {
+        HeadRecursion(n-1);                                 //it is head recursion in which stack is use
+        cout<<n<<" ";
+    }
+}
+int main()
+{
+    int n;
+    cout<<"Enter the number"<<endl;
+    cin>>n;
+    HeadRecursion(n);
+}
