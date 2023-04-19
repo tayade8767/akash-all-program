@@ -1,0 +1,19 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+void TreeRecursion(int n)
+{
+    if(n>0)
+    {
+        TreeRecursion(n-1);                                 //it is Tree recursion in which Stack is use
+        cout<<n<<" ";
+        TreeRecursion(n-1);                                 //it is Tree recursion in which Quea is use
+    }
+}
+int main()
+{
+    int n;
+    cout<<"Enter the number"<<endl;
+    cin>>n;
+    TreeRecursion(n);
+}
