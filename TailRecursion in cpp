@@ -1,0 +1,18 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+void TailRecursion(int n)
+{
+    if(n>0)
+    {
+        cout<<n<<" ";
+        TailRecursion(n-1);                                 //it is Tail recursion in which Quea is use
+    }
+}
+int main()
+{
+    int n;
+    cout<<"Enter the number"<<endl;
+    cin>>n;
+    TailRecursion(n);
+}
