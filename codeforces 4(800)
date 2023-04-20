@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int t,m=0;
+    cin>>t;
+    while(t--)
+    {
+        int count=0;
+        int a[3];
+        for(int i=0;i<3;i++)
+        {
+            cin>>a[i];
+        }
+         for(int i=0;i<3;i++)
+        {
+            if(a[i]==1)
+            {
+                count++;
+            }
+            if(count>=2)
+            {
+                m++;
+                break;
+            }
+        }
+        // cin>>a>>b>>c;
+        // if(a==1 && b==1)
+        // {
+        //     count++;
+        // }
+        // if(c==1 && c==1)
+        // {
+        //     count++;
+        // }
+        // if(a==1 && c==1)
+        // {
+        //     count++;
+        // }
+        // if(count!=0)
+        // {
+        //     m++;
+        // }
+      //  cout<<m<<endl;
+    }
+    if(m>=2)
+        {
+            cout<<m<<endl;
+        }
+        
+    return 0;
+}
