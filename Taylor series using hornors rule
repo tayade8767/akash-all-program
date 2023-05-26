@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+double Taylor_HonorsRule(int x,int n)
+{
+    static double s=1;
+    if(n==0)
+    {
+        return s;
+    }
+    s=1+(x*s)/n;
+   return Taylor_HonorsRule(x,n-1);
+}
+int main()
+{
+    int x,n;
+    cout<<"We have to calculate the Taylor series"<<endl;
+    cout<<"Enter the value of Base::";
+    cin>>x;
+    cout<<"Enter the value of Power::";
+    cin>>n;
+    cout<<"The value of tge Taylor series ="<<Taylor_HonorsRule(x,n);
+    return 0;
+}
