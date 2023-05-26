@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+double Taylor(int a,int b)
+{
+    static double p=1,f=1,r;
+    if(b==0)
+    {
+        return 1;
+    }
+    r=Taylor(a,b-1);
+    p=p*a;
+    f=f*b;
+    return (r+p/f);                    //   this function contain the O(n^2) time so that the honors rule is use it conatin the O(n)   time
+}
+int main()
+{
+    int x,n;
+    cout<<"We have to calculate the Taylor series"<<endl;
+    cout<<"Enter the value of Base::";
+    cin>>x;
+    cout<<"Enter the value of Power::";
+    cin>>n;
+    cout<<"The value of tge Taylor series ="<<Taylor(x,n);
+    return 0;
+}
