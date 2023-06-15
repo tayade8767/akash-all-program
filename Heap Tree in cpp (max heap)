@@ -1,0 +1,72 @@
+#include<iostream>
+using namespace std;
+
+void Create_Heap(int a[],int n)                                //  it is the heap creation it takes O(nlog(n)) time
+{
+    int temp=a[n],i=n;
+    while(i>0 && temp>a[i/2])
+    {
+        swap(a[i/2],a[i]);
+        i=i/2;
+    }
+    cout<<"Complete"<<endl;
+}
+
+void Delete_Heap(int a[],int n)                               //  delecte the heap sort
+{
+    int temp=a[1],i,j;
+    a[1]=a[n];
+    i=1;
+    j=i*2;
+    while(j<n-1)
+    {
+        if(a[j+1]>a[j])
+        {
+            j++;
+        }
+        if(a[i]<a[j])
+        {
+            swap(a[i],a[j]);
+            i=j;
+            j=j*2;
+        }
+    }
+    a[n]=temp;
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter the number of element to be entered::";
+    cin>>n;
+    int a[n];
+    for(int i=1;i<=n;i++)
+    {
+        cout<<"Enter the element::";
+        cin>>a[i];
+    }
+   for(int i=1;i<=n;i++)
+    {
+        Create_Heap(a,i);
+    }
+    cout<<endl;
+    cout<<"Created HeapTree"<<endl;
+    for(int i=1;i<=n;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    cout<<endl;
+    cout<<"After Delection HeapTree"<<endl;
+    Delete_Heap(a,k);                                          //  it is for the delection of the Heap Tree
+    for(int i=1;i<=n;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    // int k=n;
+    // for(int i=1;i<=n;i++)
+    // {
+    //     Delete_Heap(a,k);                           //  it is the HEAP sort in which delected element is place at the last place 
+    //     k--;
+    // }
+    return 0;
+}
