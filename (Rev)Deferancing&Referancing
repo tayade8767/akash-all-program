@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+
+int main() 
+{
+    int a=10,*b,va=101;
+     b=&a;                                //Deferancing
+     cout<<"Deferancing=b="<<*b<<endl;
+    int &c=va;                             //Referencing
+    cout<<"Referancing="<<c;
+    return 0;
+}
