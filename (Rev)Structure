@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+struct employe
+{
+    int model,width,height;
+    char brand;
+    string bb;
+    float rate;
+    employe(int w,int h)
+    {
+        width=w;
+        height=h;
+    }
+    int rectangle()
+    {
+        return (width*height);
+    }
+};
+
+
+int main() 
+{
+    struct employe e=employe(10,20);
+    cout<<"rectangle="<<e.rectangle()<<endl;
+    e.model=101010;
+    e.brand='a';
+    e.bb="kksmdflmf";
+    cout<<e.bb<<endl;
+    cout<<e.brand;
+    return 0;
+}
