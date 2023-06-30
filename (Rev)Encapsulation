@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+class Akash
+{
+    private:
+    int a,b;
+    public:
+   void setdata(int x,int y)
+   {
+      a=x;
+      b=y;
+   }
+   void getdata()
+   {
+       cout<<a*b;
+   }
+};
+int main()
+{
+    Akash a;
+    a.setdata(10,303);
+    a.getdata();
+    return 0;
+}
