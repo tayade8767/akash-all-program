@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+void refe(int *a,int *b)                             //   call by value can change
+{
+     int temp=*a;
+     *a=*b;
+     *b=temp;
+}
+void Value(int a,int b)                           //   call by value can not change
+{
+     int temp=a;
+     a=b;
+     b=temp;
+}
+
+int main() 
+{
+    int a=10,b=20;
+    refe(&a,&b);
+    cout<<a<<"  "<<b;
+    Value(a,b);
+    return 0;
+}
