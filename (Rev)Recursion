@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+
+    int R(int n)
+    {
+        if(n>0)
+        {
+            return R(n-1)*n;
+        }
+        else{
+            return 1;
+            
+        }
+    }
+
+int main() 
+{
+    cout<<R(5)<<endl;
+    return 0;
+}
