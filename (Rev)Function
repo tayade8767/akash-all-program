@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+
+    int rectangle(int w,int h)
+    {
+        return (w*h);
+    }
+
+void rect(int a);
+int main() 
+{
+    cout<<rectangle(10,32)<<endl;
+    rect(20);
+    return 0;
+}
+
+void rect(int a)
+{
+    cout<<a*12.5;
+}
