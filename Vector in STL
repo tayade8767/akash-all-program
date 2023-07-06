@@ -1,0 +1,56 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    vector<int> v;
+     vector<int> v2;
+    v.push_back(10);
+    v.push_back(11);
+    v.push_back(12);
+    v.push_back(13);
+    v.push_back(14);
+    v.push_back(15);
+    v.push_back(16);
+    v.push_back(17);
+     
+    cout<<"size="<<v.size()<<endl;     //size of an vector
+   
+     
+    
+     cout<<"size="<<v.size()<<endl;
+     cout<<"pos 2="<<v.at(2);                         //   gives the perticular element at that position
+     v.insert(v.begin()+1,10000);        //   insert the new element in the vector from last
+     v.emplace(v.begin()+1,10000);        //   insert the new element in the vector from last
+
+
+   //     v2.swap(v);                    //   it swap the element from 1 to 2nd vector
+for(auto it=v.begin();it<v.end();it++)
+     {
+            cout<<*it<<" ";
+     }
+   //  v.erase(v.begin());                 //   erase the perticular element 
+   //  v.resize(10);               //resize the vector
+     cout<<endl;
+
+
+
+
+for(int i=0;i<v2.size();i++)
+     {
+        cout<<v2[i]<<" ";
+     }
+
+
+       for(int i=0;i<v.size();i++)
+     {
+        v.pop_back();                 //for remove element from vector like LIFO
+     }
+
+
+       v.assign(4,100);          //  assign the element new to the vector
+     v.clear();                 //    clear all the element from the vector
+
+
+    return 0;
+}
