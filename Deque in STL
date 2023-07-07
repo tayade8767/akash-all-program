@@ -1,0 +1,31 @@
+
+#include<iostream>
+#include<deque>                         //    header file
+using namespace std;
+int main()
+{
+    deque<int> dq;                 //  arrange || insert the element as in decreasing              max heap
+    
+      dq.push_front(10);       //insert from front size
+      dq.push_back(11);         //insert from back size
+
+
+      cout<<"is empty deque="<<dq.empty()<<endl;
+
+      cout<<"deque at 1="<<dq.at(1)<<endl;
+
+      
+                         
+//cout<<"top element="<<pq.top()<<endl;                   // gives top element means 1st element
+
+ for (auto it = dq.begin(); it != dq.end(); ++it)     //iterater in deque
+ {
+        cout << ' ' << *it;
+ }
+    return 0;
+
+
+      dq.pop_back();             //delete from back size
+      dq.pop_front();           //delete from front size
+
+}
