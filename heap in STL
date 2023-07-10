@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    vector<int> v;
+    v.push_back(170);
+    v.push_back(11);
+    v.push_back(112);
+    v.push_back(13);
+    v.push_back(1554);
+    
+     make_heap(v.begin(),v.end());    //  make heap can make the heap
+     cout<<v.front()<<endl;
+
+     v.push_back(101010);
+     push_heap(v.begin(),v.end());   //  after element is push_back it can rearrange the heap
+     cout<<v.front()<<endl;
+
+     pop_heap(v.begin(),v.end());
+     cout<<"last element after pop max heap="<<v.back()<<endl;   //last element after pop max heap 
+      v.pop_back();
+
+     sort_heap(v.begin(),v.end());
+      cout << "The heap elements after sorting are: ";
+    for (int& x : v)
+    {
+        cout << x << " ";
+    }
+
+    bool k=is_heap(v.begin(),v.end());      //check it is heap or not
+    cout<<k<<endl;
+
+    return 0;
+}
