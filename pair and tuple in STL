@@ -1,0 +1,25 @@
+#include<iostream>
+#include<utility>                                          //    when pair can make we can delecre the utility header file
+#include<tuple>                                           //    when tuple can make we can delecre the tuple header file
+using namespace std;
+int main()
+{
+    pair <int ,string> pair1;                         //  it is the general syntax 
+
+    // pair <double ,string> pair1;                  //  we can define the multiple pair at a time
+
+      tuple<int ,float,char> t=make_tuple(10,2.33,'w');      // it is general syntax of the tuple
+
+      cout <<"tuples values are===  "<< get<0>(t) << " " << get<1>(t)<<" "<<get<2>(t)<<endl;         //printing the tuple values
+
+    pair<int ,string > pair2=make_pair(1111,"Tayade");
+
+    pair1.first=100;                                //   the first value can be assign like this
+    pair1.second="akash";                            //   the first value can be assign like this
+
+
+      pair1.swap(pair2);                  //   swap the value between pair1 and pair2
+
+    cout<<"pair values are===  "<<pair1.first<<" "<<pair1.second<<endl;       //  printing the first and the second value can be assign like this
+    return 0;
+}
