@@ -1,0 +1,19 @@
+#include<iostream>
+#include<list>
+#include<iterator>
+using namespace std;
+int main()
+{                                                               //   ALL FUNCTION ARE SAME AS THE STACK QUEQ AND VECTOR
+    list<int> l;
+    list<int>::iterator it;                         //  delacration of the iterator 
+    for(int i=0;i<10;i++)
+    {
+        l.push_back(i);
+    }
+    for(it=l.begin();it!=l.end();it++)                 //  it is the iterator
+    {
+        cout<<*it<<" ";
+    }
+    
+    return 0;
+}
