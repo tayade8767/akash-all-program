@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+#include<set>    
+#include<iterator>                //  define the iterator                     //   use the header file
+using namespace std;
+int main()
+{
+    // set<int> s;           //  store the unique element and in assending order
+    multiset<int> s;                                                              //  it store the all element dublicate also  
+    // set<int,greater<int>> s;                 define when the sorting order is change to desending
+
+    s.insert(32);
+    s.insert(2);
+    s.insert(90);
+    s.insert(321);
+    s.insert(90);
+    s.insert(122);
+    s.insert(90);
+
+    //  set<int,greater<int>> s1(s.begin(),s.end());                // assign all the element to the set 1
+
+    //   set<int,greater<int>>::reverse_iterator it;                    //  it is the reverese iterator 
+    //   set<int>::iterator itr;
+
+      for(auto it : s)                 //it is iterator
+      {
+            cout<<it<<" ";
+      } 
+
+  
+//   s1.swap(s);                                 swap the values from 1 set to another
+
+    return 0;
+}
