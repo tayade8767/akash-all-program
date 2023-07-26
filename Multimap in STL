@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+#include<map>    
+#include<iterator>                //  define the iterator                     //   use the header file
+using namespace std;
+int main()
+{
+      multimap<string,int> m;           //  store the unique element and in assending order
+     //unordered_map<int> k;           unordered map stored the keys in unorderd way
+
+     
+     
+     m.insert(pair<string,int>("akash",1221));          // store the dublicate keys in and it is only way to insert the values
+
+      map<string,int>::iterator it=m.begin();
+
+      while(it!=m.end())
+      {
+            cout<<it->first<<" "<<it->second<<endl;            //   it print the value and the key allocated to it
+            it++;
+      }
+
+      if (m.count("akash") > 0)                                       //  it is use to find the element in map
+  {
+    cout << "Key 'four' is in the map" << std::endl;
+  }
+
+    return 0;
+}
