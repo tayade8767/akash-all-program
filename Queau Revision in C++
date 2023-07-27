@@ -1,0 +1,219 @@
+#include<bits/stdc++.h>
+#include<stack>
+using namespace std;
+#define max 100
+int rear=-1,front=-1;
+int a[max];
+queue<int>q;
+priority_queue<int>pq;
+deque<int>dq;
+
+// insert the element in stack by logic
+
+void enquebylogic()
+{
+    if(front==max)
+    {
+        cout<<"Queau is full by logic"<<endl;
+    }else{
+        cout<<"Enter the value to push::";
+        int value;
+        cin>>value;
+        a[++front]=value;
+        cout<<"Queau Becomes::";
+        for(int i=0;i<=front;i++)
+        {
+            cout<<a[i]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+// push by stl in cpp
+
+void enquebystl()
+{
+    while(true)
+    {
+        cout<<"Enter 1 for enque in Queau"<<endl;
+        cout<<"Enter 2 for enque in priority_queue"<<endl;
+        cout<<"Enter 3 for enque in dequeau"<<endl;
+        cout<<"Enter 0 for EXIT"<<endl; 
+        int n;
+        cin>>n;
+        switch(n)
+        {
+            case 1:
+            {
+                cout<<"Enter the value to push in Queau::";
+                int value;
+                cin>>value;
+                if(q.size()==100)
+                {
+                    cout<<"Queue is full"<<endl;
+                }
+                else{
+                    q.push(value);                                                                      //   we can delecre the Queue here
+                }
+                break;
+            }
+            case 2:
+            {
+                
+                cout<<"Enter the value to push in priority queau::";
+                int value;
+                cin>>value;
+                if(pq.size()==100)
+                {
+                    cout<<"Queue is full"<<endl;
+                }
+                else{
+                    pq.push(value);                                                                      //   we can delecre the Queue here
+                }
+                break;
+            }
+            case 3:
+            {
+                cout<<"Enter the value to push in Deque::";
+                int value;
+                cin>>value;
+                if(dq.size()==100)
+                {
+                    cout<<"Queue is full"<<endl;
+                }
+                else{
+                    dq.push_back(value);                                                                      //   we can delecre the Queue here
+                }
+                break;
+            }
+        }
+        if(n==0)
+        {
+            break;
+        }       
+    }    
+}
+
+// pop by logic 
+
+void dequebylogic()
+{
+    if(front==rear)
+    {
+        cout<<"Queau is empty by logic"<<endl;
+    }
+    else{
+        cout<<"deque value by logic::"<<a[++rear]<<endl;
+        cout<<"Queau Becomes::";
+        for(int i=rear+1;i<=front;i++)
+        {
+            cout<<a[i]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+// pop by STL 
+
+void dequebystl()
+{
+    
+
+
+
+while(true)
+    {
+        cout<<"Enter 1 for deque in Queau"<<endl;
+        cout<<"Enter 2 for deque in priority_queue"<<endl;
+        cout<<"Enter 3 for deque in dequeau"<<endl;
+        cout<<"Enter 0 for EXIT"<<endl; 
+        int n;
+        cin>>n;
+        switch(n)
+        {
+            case 1:
+            {
+                if(q.empty())
+                {
+                    cout<<"Queue is Empty"<<endl;
+                }
+                else{
+                    cout<<"Pop value in Queau::"<<q.front();
+                    q.pop();                                                                      //   we can delecre the Queue here
+                }
+                break;
+            }
+            case 2:
+            {
+                
+                if(pq.empty())
+                {
+                    cout<<"Queue is Empty"<<endl;
+                }
+                else{
+                    cout<<"Pop value in Priority_Queau::"<<pq.top();
+                    pq.pop();                                                                      //   we can delecre the Queue here
+                }
+                break;
+            }
+            case 3:
+            {
+                if(dq.empty())
+                {
+                    cout<<"Queue is Empty"<<endl;
+                }
+                else{
+                    cout<<"Pop value in Dequeau::"<<dq.front();
+                    dq.pop_front();                                                                      //   we can delecre the Queue here
+                }
+                break;
+            }
+        }
+        if(n==0)
+        {
+            break;
+        }       
+    } 
+
+
+
+
+}
+
+int main()
+{
+    while(true)
+    {
+        cout<<"Enter 1 for enque by logic in Queue"<<endl;
+        cout<<"Enter 2 for enque by STL in Queue"<<endl;
+        cout<<"Enter 3 for deque by logic in Queue"<<endl;
+        cout<<"Enter 4 for deque by STL in Queue"<<endl; 
+        int n;
+        cin>>n;
+        switch(n)
+        {
+            case 1:
+            {
+                enquebylogic();
+                break;
+            }
+            case 2:
+            {
+                enquebystl();
+                break;
+            }
+            case 3:
+            {
+                dequebylogic();
+                break;
+            }
+            case 4:
+            {
+                dequebystl();
+                break;
+            }
+        }
+        
+    }    
+    return 0;
+}
