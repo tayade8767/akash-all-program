@@ -1,0 +1,14 @@
+
+#include <iostream>
+using namespace std;
+int main() {
+    int a = 5,b = 7;
+    cout<<"Before Swapping of Number  a = "<<a<<"  b = "<<b<<endl;
+     
+    a = a ^ b;
+    b = a ^ b;                    //    this gives the b = a^b^b;   where b^b = 0;    then    b = a;                   
+    a = a ^ b;                    //    after that   the a = a^b^a   where a^a = 0;   then    a = b;
+      
+    cout<<"After  Swapping of Number  a = "<<a<<"  b = "<<b<<endl;
+    return 0;
+}
